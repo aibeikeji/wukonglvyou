@@ -1,0 +1,45 @@
+/* pages/listdetails/listdetails.wxss */
+page{
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+.thisWeek{
+  margin-top:80rpx;
+}
+.listHead{
+  color:#999999;
+  font-size:38rpx;
+  margin-left:20rpx;
+  margin-bottom:20rpx;
+}
+.thisDay{
+  width:92%;
+  margin:80rpx auto 0;
+  position:relative;
+}
+.head-bg{
+  width:100%;
+  height:260rpx;
+}
+.head-bg image{
+  width:100%;
+  height:100%;
+}
+.head-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+  color:#fff;
+}
+.head-ranking{
+  width:100%;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+}
+.head-ranking text{
+   font-size:100rpx;
+}

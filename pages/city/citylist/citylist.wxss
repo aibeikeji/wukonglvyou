@@ -1,0 +1,87 @@
+/* pages/city/citylist/citylist.wxss */
+page{
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+.search{
+ width:92%;
+  height:60rpx;
+  background:#EAEAEA;
+  border-radius:10rpx;
+  margin:0 auto;
+  position:relative;
+  display:flex;
+  justify-content: center;
+  font-size:28rpx;
+  color:#999;
+  align-items: center;
+}
+.icon_search{
+  width:24rpx;
+  height:24rpx;
+  margin-right:10rpx;
+}
+.icon_search image{
+  width:100%;
+  height:100%;
+}
+.text{
+  vertical-align: middle;
+  font-size:28rpx;
+}
+.now-city{
+  margin:40rpx 0  60rpx 30rpx;
+}
+.now-title{
+  color:#CCCCCC;
+  font-size:28rpx;
+  margin-bottom:20rpx;
+}
+.now-content{
+  display:inline-block;
+  height:60rpx;
+  line-height:60rpx;
+  padding:0 30rpx;
+  border:1px solid #FFC438;
+  color:#FFC438;
+  font-size:30rpx;
+  border-radius:8rpx;
+}
+.all-city{
+  width:100%;
+   height:700rpx;
+  background:#fff;
+  display:flex;
+}
+.all-city-left{
+  flex:1
+}
+.all-city-right{
+  width:40rpx;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  height:700rpx;
+}
+.letter_item{
+ color: #FFC438;
+ font-size:22rpx;
+ text-align: center;
+}
+.left-item{
+  margin-left:30rpx;
+  margin-bottom:60rpx;
+}
+.cityName-left{
+  height:88rpx;
+  border-bottom:1px solid #E6E6E6;
+  font-size:32rpx;
+  color:#333;
+  line-height:88rpx;
+}
+.letter-text{
+  color:#999999;
+  font-size:28rpx;
+  padding-bottom:34rpx;
+}

@@ -1,0 +1,11 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="content">
+  <view class="wel-logo">
+    <image src="{{assetsPath}}wx-applet/wel-logo.png"></image>
+  </view>
+  <view class="wel-text">
+    <view>程序由悟空旅游开发，请确认授权以下信息</view>
+    <view class="wel-alter"><icon class="cicle"></icon>获得您的公开信息（昵称、头像等）        </view>
+  </view>
+    <button type="button" class="wel-btn"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登陆</button>
+</view>

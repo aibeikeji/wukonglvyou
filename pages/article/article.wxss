@@ -1,0 +1,22 @@
+/**userInfo.wxss**/
+@import "/wxParse/wxParse.wxss";
+
+page {
+  background-color: #fff;
+}
+
+view {
+  box-sizing: border-box;
+  overflow: hidden;
+  
+}
+
+page>view {
+overflow-y: scroll;
+height: 100%;
+padding-bottom:100rpx;
+}
+
+view, view text {
+  font-size: 28rpx;
+}

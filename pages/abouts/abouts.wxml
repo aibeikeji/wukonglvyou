@@ -1,0 +1,14 @@
+<!--pages/abouts/abouts.wxml-->
+<view class="content">
+    <view class="imgText">
+      <view class="com-logo">
+        <image src="{{assetsPath}}wx-applet/logo.png"></image>
+      </view>
+      <view class="title">悟空旅游共享</view>
+    </view>
+    <view class="copyright">
+      <view>V1.4.0</view>
+      <view class="company-text">深圳悟空旅游科技有限公司</view>
+      <view class="con-text">Copyright © 2018 ryjgb.net All Rights Reserves</view>
+    </view>
+</view>

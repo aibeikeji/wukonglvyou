@@ -1,0 +1,60 @@
+<!--userInfo.wxml-->
+<view class="container">
+  <view class="bor-t-b  mt-20 w-100">
+      <!-- <view  class="user-avatar">
+        <view class="user-center">
+           <view>头像</view>
+            <view class="user-icon">
+              <image src="{{userData.headImgPath}}"></image>
+            </view>
+        </view>
+      </view> -->
+      <!-- <view class="user-message">
+         <view class="user-items">
+            <view class="user-left">昵称</view>
+            <view class="user-right">{{userData.nickname}}</view>
+         </view>
+         <view class="user-items">
+            <view class="user-left">手机号</view>
+            <view class="user-right">{{userData.mobile}}</view>
+         </view>
+         <view class="user-items"  bindtap="jumpurl">
+               <view class="user-left">实名认证</view>
+              <view class="next-btn" wx:if="{{!Authentication}}">
+                <image src="{{assetsPath}}wx-applet/next-btn.png" ></image>
+              </view>
+              <view class="user-right" wx:else>已认证</view>
+         </view>
+      </view> -->
+      <view class="user-contact">
+        <view class="col-md-s">
+          <view class="col-md-left">头像</view>
+          <view class="user-img"><image src="{{userData.headImgPath}}"></image></view>
+        </view>
+        <view class="col-md-s">
+           <view class="col-md-left">昵称</view>
+          <view class="col-md-right">{{userData.nickname}}</view>
+        </view>
+        <view class="col-md-s noBorder">
+           <view class="col-md-left">手机号</view>
+          <view class="col-md-right">{{userData.mobile}}</view>
+        </view>
+      </view>
+      <view class="user-Authentication">
+        <view class="col-md-s">
+          <view class="col-md-left">姓名</view>
+          <view class="col-md-right">{{userReal}}</view>
+        </view>
+         <view class="col-md-s noBorder" bindtap="jumpurl">
+          <view class="col-md-left">实名认证</view>
+          <view class="next_button" wx:if="{{!Authentication}}">
+            <text class="user_ren">未认证</text>
+            <view class="next-btn" >
+              <image src="../../images/next_btn.png"></image>
+            </view>
+          </view>
+          <view class="col-md-right" wx:else>已认证</view>
+        </view>
+      </view>
+</view>
+</view>

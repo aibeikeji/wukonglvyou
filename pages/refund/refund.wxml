@@ -1,0 +1,18 @@
+<!--pages/depositRecharge/depositRecharge.wxml-->
+<view>
+  <view class="refund-alter">
+    押金退还时间为1-7个工作日，在此期间您的账户将无法使用退还押金的产品
+  </view>
+  <view class="refund-list"> 
+    <view class="refund-item {{arr[index]}}" data-index='{{index}}' data-waitPay='{{item.pdDeposit}}' wx:for="{{productList}}" wx:for-index="index" wx:for-item="item" id="{{item.pdModelId}}" bindtap="clickCancel">
+    <view data-index='{{index}}'>
+      <view class="pName">{{item.modelName}}</view>
+      <view class="pPrice">￥{{item.pdDeposit}}</view>
+    </view>
+    </view>
+  </view>
+  <view class="wait-refund">待退还的押金{{waitPay}}元</view>
+  <view class="refund-btn">
+    <button bindtap='waitPays'>退还押金</button>
+  </view>
+</view>

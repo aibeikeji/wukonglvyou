@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="require.js"></script>
+</head>
+<body>
+
+<script>
+    require(['api/MembercontrollerApi'], function(foo) {
+
+        var a = new foo();
+        console.log(111);
+        console.log(a.getMemberProfileUsingGET1(function(st) {
+            console.log(st);
+        }));
+        console.log(2222);
+        /****/
+    });
+</script>
+</body>
+</html>

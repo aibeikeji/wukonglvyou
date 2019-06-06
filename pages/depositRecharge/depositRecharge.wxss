@@ -1,0 +1,90 @@
+/* pages/depositRecharge/depositRecharge.wxss */
+page{
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+.refund-alter{
+  margin-top:40rpx;
+  color:#333333;
+  font-size:36rpx;
+  font-weight:bold;
+  margin:40rpx 30rpx 40rpx 30rpx;
+}
+.wait-refund{
+  color:#333333;
+  font-size:32rpx;
+  font-weight:bold;
+  margin-bottom:120rpx;
+  margin-left:30rpx;
+  margin-top:80rpx;
+}
+.refund-list{
+  margin:0 30rpx;
+  display:flex;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+  flex-direction: row;
+}
+.refund-item{
+  width:156rpx;
+  height:100rpx;
+  border:1px solid #E6E6E6;
+  border-radius:8rpx;
+  text-align:center;
+  margin-bottom:24rpx;
+  margin-right:22rpx;
+  position:relative;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.refund-item:nth-child(4){
+  margin:0;
+}
+.refund-item view{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.pName{
+  width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:28rpx;
+  color:#333333;
+  margin-top:12rpx;
+  margin-bottom:6rpx;
+  animation:lanimation 2.5s ease-in infinite;
+}
+.pPrice{
+  font-size:24rpx;
+  color:#CCCCCC;
+}
+.refund-btn{
+   width:100%;
+}
+.refund-btn button{
+  margin:0 50rpx;
+  height:88rpx;
+  line-height:88rpx;
+  color:#fff;
+  font-size:36rpx;
+  border-radius:80rpx;
+  background:#ffce45;
+}
+/* 此处是切换class */
+.choiceSelected{
+  border:1px solid #ffce45;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA8CAYAAAAt3km7AAAAAXNSR0IArs4c6QAAA+VJREFUaAXdmjFv00AUx99zGyIhBgbEjMTCghC0Q9N2CEhhZ6VMUNih7HyAdmKlopVgYigC0SKEhDKQ0KESSIEFqSwgJiSQKLSRSI73rrnUTc722XdO7Fhqzz2f33s/37u7f88GGMFD1Et3cdS4xNupOUB4NFJgojZ9GaD9AgQURgZMbM5OwL9WFUAc4ywcCTDqqdMEVAchTqqhlXswgiIYCUVwB4d3cJq/M/GpTGknXlJPHYJiktyCia1bBfi5t0ZQF3RdkkswIQTCXmOVgCo6KK4bD7qQ6fp6aYniuxoWY+56jFUFrVN3wqD4Wq5mRaUqCCwy7sgGUU9mUNf9qsLEZy7AelXFSIDpVEXuwYJUhQlYZmfFMFWRW7AoVZFLMBNVYQKWPeVhoCpMwDI1xkxVhQlYZtaxOKoiN2Bic6YCrdY671WYBG3SZug9lkRVZB4sqarINJiNqjABG8qsaKsqMgnmQlVkDsyVqjABG6zycKQqTMAGNsZoslgw2aswCdqkzUDWMdeqwgRszKSRTRupKoR4Qr2Vji8kyx7O097vB9oVLqtYUx1jHVWxRs6cSSUVuCwZCnEep9895L8p3elX+x6fpzbGpKpotTbIk3ytw86cHj1Q0jaKr8pHKmAdVfHK/1pHOXRSaqDoX54b5O+Bsu8cTKoK0d7QvQFRTq3KMCjfRqpTsK6qAJiwCj7oZkMovt0ZWOqqIgYUg7mbFdNUFTGhnPVYqqoiARSDWSsPY1XBAfoGNzuPPBJCsV2rMSZVBcJKdMD4hRbSc/SzFQmjGlhAWYHtq4o2vQOOUhUEdaRQJnXQgKPFihGcJVRisFiqAuEPeN4uO8Pz1V+RcA6gpC/+FefoqAr+WKTvE4RAO4gNKBYv4WT1B7cR78vH4W/zNdmYPHSPIyi2GWuMJVYVQpyFZvON2CqfYKfantNDXZcyKe6kEwfMWlWEwQVDLUdPTPyo+g+j6V6qitr0Y0qi0E8Q+s1ranRpudu8SJPLU9W6K2gT9NS+DdwxA6tNLdGTW1COrcseOL89guL0S9xTHVufI8dYR1W4g2LPPWmpwBxBsbntUDCpKqC9qBw7LXvgHELRlIjrgamYxhsQ7YPhtARcpS9DOd0D49Heq63EFowXT2kNpfUGRBuH60r0lnGmfrMvFWOpCtdB2dpD/A0C+zdzOqoivb0K28DD7kdog/Cu4WztOzfr9lhiVRHmbFDXGAq82wT1XLmUYNaqQlkbRinTb+wKjav7fveeVBXNjytUGfi1pv+G7JzT7EcTBaXfGX9PqfjGoV5apGl2TlVkt8QdWtl5/GzzOgVe8RlOVb8Fxfsf9I82zsn1eJoAAAAASUVORK5CYII=) no-repeat;
+  background-size:38rpx 40rpx;
+  background-position:bottom right;
+}
+.choiceSelected view{
+  color:#ffce45;
+  width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

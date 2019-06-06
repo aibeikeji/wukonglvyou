@@ -1,0 +1,76 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/unLockLoading/unLockLoading",
+    "pages/mobileBind/mobileBind",
+    "pages/myCharge/myCharge",
+    "pages/certification/certification",
+    "pages/regSuccess/regSuccess",
+    "pages/bikeComplete/bikeComplete",
+    "pages/myCoupon/myCoupon",
+    "pages/journeyDetails/journeyDetails",
+    "pages/userCenter/userCenter",
+    "pages/userInfo/userInfo",
+    "pages/myJourney/myJourney",
+    "pages/myWallet/myWallet",
+    "pages/depositRecharge/depositRecharge",
+    "pages/deposit/deposit",
+    "pages/inviteFriend/inviteFriend",
+    "pages/setting/setting",
+    "pages/article/article",
+    "pages/feedback/feedback",
+    "pages/list/list",
+    "pages/refund/refund",
+    "pages/listdetails/listdetails",
+    "pages/feedbackMore/feedbackMore",
+    "pages/weather/wIndex/wIndex",
+    "pages/weather/wSearch/wSearch",
+    "pages/activityList/activityList",
+    "pages/activityDetails/activityDetails",
+    "pages/msgList/msgList",
+    "pages/msgDetails/msgDetails",
+    "pages/find/find",
+    "pages/findDetails/findDetails",
+    "pages/logs/logs",
+    "pages/abouts/abouts",
+    "pages/city/citylist/citylist",
+    "pages/city/citySearch/citySearch",
+    "pages/welcome/welcome"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "悟空旅游共享",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#8E8E93",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/home_inactive.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/activity_inactive.png",
+        "selectedIconPath": "images/activity_active.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "我的",
+        "iconPath": "images/me_inactive.png",
+        "selectedIconPath": "images/me_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 40000,
+    "downloadFile": 40000
+  }
+}

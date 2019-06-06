@@ -1,0 +1,97 @@
+<!--userInfo.wxml-->
+<view>
+    <view class="ac-main-cont" wx:if="{{!activity.log || activity.log.status == 40}}">
+        <image class="ac-main-pic" wx:if="{{activity.cover}}" src="{{activity.cover}}_750x350"></image>
+        <image class="ac-main-pic" wx:if="{{!activity.cover}}" src="{{assetsPath}}wx-applet/cover_default_big.png"></image>
+        <view class="ac-main-title">{{activity.activityName}}</view>
+        <view class="ac-main-btn" bindtap="viewDetails"><image class="view-ac-btn" src="{{assetsPath}}wx-applet/introduce_white.png"></image></view>
+    </view>
+
+    <map wx:if="{{activity.log && activity.log.status != 40}}" id="myMap" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" controls="{{controls}}"
+         bindtap="indexTapMap" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"
+         polyline="{{polyline}}" bindregionchange="regionchange" include-points="{{includePoints}}" show-location style="width: 100%; height: 375rpx">
+        <cover-view class="ac-map-title">
+            <cover-view style=" padding: 20rpx 30rpx;">{{activity.activityName}}</cover-view>
+        </cover-view>
+    </map>
+
+    <view class="dis-flex lh-80 bor-bot c-bg-white">
+        <image class="ac-time-ico plr-30 mt-20 pt-5" src="{{assetsPath}}wx-applet/period_time_icon.png"></image>
+        <view class="fz-28 flex">{{activity.beginDate}}-{{activity.endDate}} ({{activity.days}}天)</view>
+        <view class="c-light-gray fz-28 pr-30" wx:if="{{activity.log.status == 10}}">已失败</view>
+        <view class="in-activity fz-28 pr-30" wx:if="{{activity.log.status == 20}}">参加中</view>
+        <view class="c-orange fz-28 pr-30" wx:if="{{activity.log.status == 30}}">已成功</view>
+        <view class="c-gray fz-28 pr-30" wx:if="{{!activity.log || activity.log.status == 40}}">未参加</view>
+    </view>
+
+    <view wx:if="{{activity.log && activity.log.status != 40}}" class="c-bg-white mt-20 bor-t-b plr-30">
+        <view class="dis-flex ptp-20" style="align-content: flex-end; justify-content: flex-end;">
+            <view class="flex">
+                <text class="h1-title">{{activity.log.distance}}</text>
+                <text class="fz-24"> 公里</text>
+            </view>
+            <view class="fz-24 c-gray dis-flex-c" style="justify-content: flex-end;">{{activity.log.beginDate}}</view>
+        </view>
+        <view class="dis-flex bor-top ptp-20">
+            <view class="flex text-center">
+                <text class="h2-title">{{activity.log.useTimeMapping}}</text>
+                <view class="fz-24 c-gray">用时</view>
+            </view>
+            <view class="flex text-center">
+                <text class="h2-title">{{activity.log.speed}}</text>
+                <view class="fz-24 c-gray">配速</view>
+            </view>
+            <view class="flex text-center">
+                <text class="h2-title">{{activity.log.calorie}}</text>
+                <view class="fz-24 c-gray">消耗热量(Kcal)</view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="rank-title mt-20 c-bg-white bor-top">
+        <image class="" src="{{assetsPath}}wx-applet/trophy_icon.png"></image>
+        排行榜TOP 10
+    </view>
+
+    <view class="mod-col-list bor-t-b rank-list">
+
+        <view class="mod-col-item" wx:if="{{activity.log.status == 30}}" style="background-color: #fafafa;">
+            <view class="pr-30">
+                <text class="rank-icon-text">{{activity.log.ranking}}</text>
+            </view>
+            <view class="flex">
+                <image class="rank-portrait" src="{{activity.log.headImgPath}}"></image>
+                <view class="text-vc fz-24">{{activity.log.nickname}}</view>
+            </view>
+            <view class="text-center plr-30 bor-left">
+                <image class="rank-time" src="{{assetsPath}}wx-applet/clock_icon.png"></image>
+                <view class="fz-24">{{activity.log.useTimeMapping}}</view>
+            </view>
+        </view>
+
+        <view class="mod-col-item" wx:for="{{activity.log_list}}">
+            <view class="pr-30">
+                <image class="rank-icon" wx:if="{{index == 0}}" src="{{assetsPath}}wx-applet/first_icon.png"></image>
+                <image class="rank-icon" wx:if="{{index == 1}}" src="{{assetsPath}}wx-applet/second_icon.png"></image>
+                <image class="rank-icon" wx:if="{{index == 2}}" src="{{assetsPath}}wx-applet/third_icon.png"></image>
+                <text class="rank-icon-text" wx:if="{{index > 2}}">{{index + 1}}</text>
+            </view>
+            <view class="flex">
+                <image class="rank-portrait" src="{{item.headImgPath}}"></image>
+                <view class="text-vc fz-24">{{item.nickname}}</view>
+            </view>
+            <view class="text-center plr-30 bor-left">
+                <image class="rank-time" src="{{assetsPath}}wx-applet/clock_icon.png"></image>
+                <view class="fz-24">{{item.useTimeMapping}}</view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="p-30 c-gray f-xl text-right">
+        <text class="pr-30">阅读 {{activity.readTimes}}</text>
+        <text>分享 {{activity.shareTimes}}</text>
+    </view>
+
+</view>

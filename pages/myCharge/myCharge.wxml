@@ -1,0 +1,27 @@
+<view class="container">
+    <view class="charge-wrap flex">
+        
+      <!-- 此处是认证步骤的修改 -->
+        <!-- <view class="charge-main">
+            <view class="view1">应付押金</view>
+            <view class="view2">
+                <text class="money">{{money}}</text>
+                <text class="unit">元</text>
+            </view>
+            <view class="view3">可全额退</view>
+            <view class="view4">
+            </view>
+        </view> -->
+        <view class="pay-payment">
+            <view class="cope-with">应付押金{{money}}元</view>
+            <view class="cope-alert">押金支付后，可随时退还</view>
+        </view>
+        <view class="charge-foot">
+            <image src="{{assetsPath}}wx-applet/wechat_pay_icon_n.png"></image>
+            <view>微信支付</view>
+        </view>
+        <view class="pay-btn" bindtap="payPledgeCash">
+          <button>去充值</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,38 @@
+<!--mobileBind.wxml-->
+<view class="container">
+
+    <form class="flex w-100">
+
+
+        <view class="bor-t-b mod-col-list mt-20">
+            <view class="mod-col-item">
+                <view class="mod-input-title">
+                    <text class="flex">手机号码</text>
+                </view>
+                <view class="section">
+                    <input class="inp-text" type="number" id="mob" name="mob" value="{{form.mob}}" bindinput="inputVal" placeholder="填写手机号码" placeholder-class="pl-style" />
+                </view>
+                <view wx:if="{{showGetCode == true}}" class="bor-left pos-r-btn bor-tap" bindtap="getCode"><text class="c-green">获取验证码</text></view>
+                <view wx:if="{{showGetCode == false}}" class="bor-left pos-r-btn bor-tap"><text class="c-gray">重新发送({{countdown}})</text></view>
+            </view>
+            <view class="mod-col-item">
+                <view class="mod-input-title">
+                    <text class="flex">验证码</text>
+                </view>
+                <view class="section"><input focus="{{focus}}" class="inp-text" id="code" name="code" value="{{form.code}}" bindinput="inputVal" type="number" placeholder="输入验证码" placeholder-class="pl-style" /></view>
+            </view>
+        </view>
+
+        <view class="p-30 mt-20">
+            <button type="primary" form-type="submit" class="c-bg-green comp" disabled="{{disabled}}" bindtap="submitForm">完成</button>
+        </view>
+
+        <view class="links">
+          <navigator url="/pages/article/article?cid=17">
+          点击完成，即表示已阅读并同意<text class="redColor">《服务条例》</text>
+          </navigator>
+        </view>
+
+    </form>
+
+</view>

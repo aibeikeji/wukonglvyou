@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="v_beforetime">转换前：{{time}}</view>
+  <view class="v_aftertime">转换后：{{aftertime}}</view>
+  <button class="btn_changeTimestamp" bindtap="changeTimestamp"> 转换 </button>
+</view>

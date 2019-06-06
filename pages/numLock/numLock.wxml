@@ -1,0 +1,16 @@
+<view class="container">
+      <view class="nl-box">
+            <view class="bike">
+                  <image src="{{assetsPath}}wx-applet/bike_picture.png"></image>
+            </view>
+            <view class="numLockText">输入车上的编号解锁用车</view>
+            <label class="input-view">
+                  <view class="nl-dis-num">
+                        <text wx:for="{{number}}" class="nl-dis-text" wx:for-item="i">{{i}}</text>
+                  </view>
+                  <input class="num-input" bindinput="inputChange" bindfocus="inputFocus" bindblur="inputBlur"
+                         name="input" type="number" maxlength="8" focus="{{focus}}" style="display: {{inputDis}};" />
+            </label>
+      </view>
+      <view class="nl-footer"><button type="primary" class="sureBT" bindtap="numberLock" disabled="{{disabled}}">确认</button></view>
+</view>

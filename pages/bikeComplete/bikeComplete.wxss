@@ -1,0 +1,50 @@
+page { position: fixed; top: 0;height: 100%; overflow: hidden;left: 0; width: 100%;}
+.bikeCompleteBG{
+    width: 100%;
+    height: 460rpx;
+    background-color: #f5f5f5;
+
+
+}
+.IMG{
+    position: relative;
+    width: 689.1rpx;
+    height: 400rpx;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+}
+.myText{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+}
+.code{
+    margin-left: 46rpx;
+    margin-top: 55rpx;
+    font-size: 34rpx;
+    color: white;
+}
+.money{
+    margin-left: 46rpx;
+    margin-top: 188rpx;
+    font-size: 26rpx;
+    color: white;
+    line-height: 1.2;
+
+}
+
+.time{
+    margin-left: 46rpx;
+    margin-top: 15rpx;
+    font-size: 26rpx;
+    color: white;
+    line-height: 1.2;
+}
+
+.problems-link { text-align: right; padding: 12rpx 30rpx 0 0; color: #b2b2b2; font-size: 24rpx;}
+.problems-link image { width: 26rpx; height: 26rpx; margin: 0rpx 0 10rpx 6rpx; vertical-align:middle;}
+
+.pay-foot { display: flex; width: 100%; align-items: center; color: #fff;}
+.pay-foot .green-btn { width: 210rpx; background-color: #fdae3b; height: 88rpx; text-align: center; line-height: 88rpx;}
+.pay-price-info { padding-left: 30rpx; flex: 1; height: 88rpx; background-color: #3A3A3A; line-height: 88rpx;}

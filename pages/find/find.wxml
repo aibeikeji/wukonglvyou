@@ -1,0 +1,15 @@
+<!--pages/find/find.wxml-->
+<view class="content">
+  <view wx:if="{{activeitem.length <=0}}">
+    <view class="activeImg"><image src="{{}}" class="noActiveImg"></image></view>
+    <view class="noActive">还没有任何活动</view>
+  </view>
+    <view class="active-item" wx:for="{{activeLitem}}" wx:for-index="idx" wx:for-item="item" id="{{item.id}}" bindtap="getId">
+      <view class="active-bg"><image class="active-img" src="{{item.cover}}"></image></view>
+      <view class="title">{{item.title}}</view>
+      <view class="active-name">{{item.remark}}</view>
+      <view class="time_read">
+        {{item.createTime}} ⋅ {{item.readTimes}}阅读
+      </view>
+    </view>
+</view>

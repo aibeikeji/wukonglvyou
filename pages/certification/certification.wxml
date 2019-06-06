@@ -1,0 +1,25 @@
+<!--certification.wxml-->
+<view class="container">
+    <form class="flex w-100">
+    <view class="head">未认证</view>
+    <view class="content">
+      <view class="content-con">
+        <view class="md-col">
+          <view class="name">姓名</view>
+          <view class="col-text">
+            <input class="inp-text" bindinput="inputVal" id="name" name="name" type="text" placeholder="请输入您的姓名" placeholder-class="pl-style" />
+          </view>
+        </view>
+        <view class="md-col">
+          <view class="name">身份证</view>
+          <view class="col-text">
+            <input class="inp-text" bindinput="inputVal" id="code" name="code" type="text" placeholder="请输入您的身份证号" placeholder-class="pl-style" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="p-30 mt-20">
+            <button type="primary" form-type="submit" class="c-bg-green yellow"  bindtap="submitForm">保存</button>
+        </view>
+    </form>
+</view>

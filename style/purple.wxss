@@ -1,0 +1,57 @@
+
+
+button[type="primary"]:active { color: rgba(255,255,255, 0.6);}
+
+
+.c-bg-green { background-color: #CC3677 !important;}
+.c-green { color: #CC3677;}
+
+.c-orange { color: #FF4100;}
+
+button[disabled][type="primary"],
+button[disabled][type="primary"]:active,
+button[disabled][type="primary"]:focus,
+button[disabled][type="primary"]:hover {
+  background: -webkit-linear-gradient(left , #EA5A98, #CC3677 100%) !important;
+}
+button[disabled] {
+ opacity:0.5;
+}
+button[disabled] {
+  color:rgba(255, 255, 255, 0.6);
+}
+
+button[type="primary"],.sh{
+  background: -webkit-linear-gradient(left , #EA5A98, #CC3677 100%) !important;
+}
+
+button[type="primary"]:focus,
+button[type="primary"]:active,
+button[type="primary"]:hover{
+  background: -webkit-linear-gradient(left , #D1005B, #B1004D 100%) !important;
+}
+
+/*  recharge.wxss **/
+.container .rech-list .active {  color: #CC3677;}
+.container .rech-list .active .cont { border-color: #CC3677 !important;}
+
+/*  userCenter.wxss **/
+.vip-head-info { border-color: #CC3677 !important; color: #CC3677 !important;}
+
+/* myBalance.wxss */
+.balance-foot {
+  background: -webkit-linear-gradient(left , #EA5A98, #CC3677 100%) !important;
+}
+
+/* vip.wxss   bikeComplete.wxss */
+.pay-foot .green-btn { width: 210rpx; background-color: #CC3677 !important;}
+
+/* feedback.wxss */
+.fb-problem-list .active { color: #CC3677 !important; border-color: #CC3677 !important;}
+.fb-code-box {border: 2rpx #CC3677 solid !important;}
+.fb-code-box input {color: #CC3677 !important;}
+
+/* dealDetail.wxss */
+.head-tab .active text {
+  background: -webkit-linear-gradient(left , #EA5A98, #CC3677 100%) !important;
+}

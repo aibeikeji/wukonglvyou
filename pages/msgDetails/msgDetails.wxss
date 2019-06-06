@@ -1,0 +1,58 @@
+page { background-color: #fff;}
+
+.art-title { color: #000; font-size: 48rpx;}
+.art-cover-picture { position: relative; background: #f5f5f5;}
+.art-cover-picture > img{ display: block; width: 100%;}
+.art-cover-btns { position: absolute; right: 0; bottom: 10%;}
+.art-cover-link img { display: inline-block; vertical-align: middle; margin-right: 0.1rem;}
+
+.art-title { margin: 15rpx 0; line-height: 1.3;}
+.art-date { padding: 10rpx 0 30rpx 0;}
+.art-content { font-size: 28rpx; /*rpx*/}
+.art-cover-picture { min-height: 340rpx;}
+.art-cover-picture > image{ width: 690rpx; height: 390rpx;}
+
+.art-cover-btns {}
+.art-cover-link image { width: 30rpx; height: 34rpx;}
+.art-cover-link { border-radius: 35rpx; font-size: 24rpx; /*rpx*/ margin-right: 30rpx;}
+
+
+.audio-block {
+    margin-bottom: 30rpx;
+    padding: 15rpx 30rpx;
+    border: 2rpx #e5e5e5 solid;
+    background-color: #f5f5f5;
+    border-radius: 6rpx;
+}
+.audio-btn { float: left; margin-top: 16rpx; width: 45px; height: 45px; overflow: hidden;
+    /*background: url("data:image/png;base64,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") no-repeat; */
+    background-size: 100%;}
+.audio-cont { margin-left: 140rpx;}
+
+@keyframes audioplay
+{
+    0% { margin-top: 0;}
+    33% { margin-top: -45px;}
+    66% { margin-top: -90px;}
+}
+.audio-play .audio-play-img {
+    animation: audioplay 0.8s steps(1) infinite;
+}
+
+/*横条样式*/
+.audio-progress-bar[type=range] {
+    -webkit-appearance: none;/*清除系统默认样式*/
+    width: 100%;
+    background: -webkit-linear-gradient(#FFBB4A, #F0B040) no-repeat, #E5E5E5;/*设置左边颜色为#61bd12，右边颜色为#ddd*/
+    background-size: 0 100%;/*设置左右宽度比例*/
+    height: 4rpx;/*横条的高度*/
+}
+/*拖动块的样式*/
+.audio-progress-bar[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;/*清除系统默认样式*/
+    height: 26rpx;/*拖动块高度*/
+    width: 26rpx;/*拖动块宽度*/
+    background: #FFBB4A;/*拖动块背景*/
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 1rpx #ddd; /*设置边框*/
+}

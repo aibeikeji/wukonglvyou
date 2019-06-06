@@ -1,0 +1,29 @@
+<!--userInfo.wxml-->
+<scroll-view class="w-100" scroll-y="true" style=" height: 100vh;" bindscrolltolower="scrolltolower" lower-threshold="3">
+    <view class="mesContent">
+        <view class="msgCon" wx:for="{{ jList}}" wx:for-item="item" data-id="{{item.id}}" data-bid="{{item.bizId}}" data-type="{{item.bizType}}" data-read="{{item.isRead}}" bindtap="getIdType">
+            <view class="mesIcon">
+                  <image src="{{item.cover}}" wx:if="{{item.bizType ==50}}"></image>
+                  <image wx:elif="{{item.bizType ==55}}" src="{{assetsPath}}wx-applet/broadcast.png"></image>
+                   <image  wx:else src="{{assetsPath}}wx-applet/systems.png"></image>
+              <view class="{{item.isRead}}" ></view>
+            </view>
+            <view class="mesText" wx:if="{{item.content.length<=0}}">
+              <view class="title">{{item.title}}</view>
+              <view class="mesTxt">{{item.remark}}</view>
+            </view>
+            <view class="mesText" wx:if="{{item.content.length>0}}">
+              <view class="title">{{item.content}}</view>
+            </view>
+            <!-- <view class="mesText" wx:if="{{item.bizType ==Undefined}}">
+              <view class="title">{{item.content}}</view>
+            </view> -->
+            <view class="mesTimer">{{item.sendDate}}</view>
+        </view>
+    </view>
+
+    <view style=" padding-top: 260rpx; text-align: center; width: 100%;" wx:if="{{jList.length == 0}}">
+        <image style="width: 334rpx; height: 278rpx;" src="{{assetsPath}}wx-applet/trip_empty.png"></image>
+        <view style="padding-top: 50rpx;" class="fz-28">还没有任何记录</view>
+    </view>
+</scroll-view>

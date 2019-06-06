@@ -1,0 +1,15 @@
+/**regSuccess.wxss**/
+
+.reg-ico-box { padding: 100rpx 0 50rpx; text-align: center;}
+.reg-success-ico { width: 186rpx; height: 186rpx;}
+.reg-success-title { font-size: 40rpx; padding-bottom: 20rpx;}
+.add_width{
+  width:200rpx;
+}
+.section input{
+  font-size:28rpx;
+}
+.nexB{
+  border-radius:40rpx;
+  background:#FFC63A;
+}

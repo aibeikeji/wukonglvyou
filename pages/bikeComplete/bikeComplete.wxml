@@ -1,0 +1,53 @@
+<!--mobileBind.wxml-->
+<view class="container">
+    <view class="bikeCompleteBG">
+        <image class="IMG" src="{{assetsPath}}wx-applet/details_picture.png">
+            <view class="myText">
+                <view class="code">NO.{{orderCode}}</view>
+                <view class="money">用棒总费用{{price}}元</view>
+                <view class="time">用棒时间：{{rideTime}}分钟</view>
+            </view>
+        </image>
+    </view>
+
+    <view class="bor-t-b mod-col-list mt-20 w-100">
+        <view class="mod-col-item">
+            <text class="flex">支付方式</text>
+            <text class="c-light-gray pr-30">微信支付</text>
+        </view>
+    </view>
+
+    <view class="flex w-100">
+        <view class="bor-t-b mod-col-list mt-20 bor-tap-z">
+            <view class="mod-col-item bor-tap" wx:if="{{fitCoupon.amount > 0}}" bindtap="selectFitCoupon">
+                <text class="flex">我的优惠</text>
+                <view class="pr-30">
+                    <text class="c-orange pr-30">-¥{{fitCoupon.amount}}</text>
+                    <image class="ico-col-arrow " src="{{assetsPath}}wx-applet/right_arrow.png"></image>
+                </view>
+            </view>
+            <view class="mod-col-item bor-tap" wx:if="{{fitCoupon.amount == 0}}">
+                <text class="flex">我的优惠</text>
+                <view class="pr-30">
+                    <text class="c-light-gray pr-30">无可用优惠</text>
+                    <image class="ico-col-arrow " src="{{assetsPath}}wx-applet/right_arrow.png"></image>
+                </view>
+            </view>
+            <view class="mod-col-item bor-tap" bindtap="journeyDetailsAction">
+                <text class="flex">订单详情</text>
+                <view class="pr-30">
+                    <text class="c-light-gray pr-30">查看</text>
+                    <image class="ico-col-arrow " src="{{assetsPath}}wx-applet/right_arrow.png"></image>
+                </view>
+            </view>
+        </view>
+
+        <view class="problems-link" bindtap="feedbackAction">遇到问题 <image src="{{assetsPath}}wx-applet/help_icon.png"></image></view>
+
+    </view>
+
+    <view class="pay-foot">
+        <view class="pay-price-info">待支付¥{{price > fitCoupon.amount ? price - fitCoupon.amount : 0}}<text class="fz-28 c-light-gray"> | 优惠¥{{fitCoupon.amount}}</text></view>
+        <view class="green-btn" bindtap="payAction">支付</view>
+    </view>
+</view>

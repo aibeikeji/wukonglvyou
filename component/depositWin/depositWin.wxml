@@ -1,0 +1,15 @@
+<view class="win-wraper" wx:if="{{isShowBuy}}">
+    <view class="win-mask"></view>
+    <view class="win-cont">
+        <image class="win-head-pic" src="{{assetsPath}}wx-applet/instructions_icon.png"></image>
+        <image class="win-head-close" src="{{assetsPath}}wx-applet/cancel.png" bindtap="closeWin"></image>
+        <view class="text-center">
+            <view class="fz-30">请选择押金类型</view>
+            <view class="fz-28 c-gray">支付押金{{charges[itemIndex].deposit}}元</view>
+        </view>
+
+        <view class="text-center" style="margin-top: 40rpx;">
+            <button type="primary" bindtap="rechargeAction" disabled="{{disabled}}">去支付</button>
+        </view>
+    </view>
+</view>

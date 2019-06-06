@@ -1,0 +1,13 @@
+<!--userInfo.wxml-->
+<view class="container">
+
+    <view class="flex w-100">
+        <view class="bor-t-b mod-col-list mt-20">
+            <view class="mod-col-item bor-tap" bindtap="selectFeedback" wx:for="{{problem2}}" id="{{item.id}}" wx:for-item="item">
+                <text class="flex">{{item.name}}</text>
+                <image wx:if="{{item.id == selectId}}" class="ico-col-arrow pr-30" style="width: 26rpx;" src="{{assetsPath}}wx-applet/fill.png"></image>
+            </view>
+        </view>
+    </view>
+
+</view>

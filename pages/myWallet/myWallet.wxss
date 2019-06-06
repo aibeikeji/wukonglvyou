@@ -1,0 +1,132 @@
+/**userInfo.wxss**/
+
+page {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  width: 100%;
+}
+
+.walletBanner {
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  height: 40vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.walletBanner image {
+  width: 132rpx;
+  height: 100rpx;
+}
+
+.walletBanner button {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  width: 200rpx;
+  display: inline-block;
+}
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.depositList {
+  width: 78%;
+  min-height: 300rpx;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 24rpx;
+}
+
+.depositHead {
+  text-align: center;
+  position: relative;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.center {
+  line-height: 100rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.close_icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+
+.close_icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.deposit-item {
+  overflow: hidden;
+}
+
+.items-content {
+  margin: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.productName {
+  color: #000;
+  font-size: 28rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.productPrice {
+  font-size: 28rpx;
+  color: RGBA(255, 196, 56, 1);
+}
+
+.payTime {
+  font-size: 24rpx;
+  color: RGBA(153, 153, 153, 1);
+}
+
+.totalMoney {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #000;
+  margin-left: 30rpx;
+  font-size: 38rpx;
+}
+
+.z {
+  position: relative;
+  z-index: 50000;
+}
+
+.list {
+  white-space:nowrap;
+  /* //overflow-y: scroll; */
+  /* width: 110%;
+  padding-right: 10%; */
+}

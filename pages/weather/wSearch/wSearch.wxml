@@ -1,0 +1,133 @@
+<!--userInfo.wxml-->
+<view class="container">
+
+    <view class="search-bar bor-bot dis-flex">
+        <view class="current-province bor-tap" bindtap="selectProvince">
+            {{selectedProvince.name}}
+            <image wx:if="{{!showProvince}}" class="s-arrow-g" src="{{assetsPath}}wx-applet/weather/screening_n.png" />
+            <image wx:if="{{showProvince}}" class="s-arrow-o" src="{{assetsPath}}wx-applet/weather/screening_s.png" />
+        </view>
+        <view class="searchbar bor-tap flex">
+            <view class="search-input flex dis-flex">
+                <view class="icon icon-search" style="display: inline-block; vertical-align: middle; padding: 6rpx 15rpx 0;"><image src="{{assetsPath}}wx-applet/weather/search_icon.png"></image></view>
+                <input type="text" confirm-type="search" bindinput="searchInput" value="{{keywords}}" class="flex fz-28 c-gray search-text" placeholder="搜索景区..." />
+
+                <!--<input type="text" confirm-type="search" id="search" placeholder="切换/搜索景区..." />-->
+            </view>
+            <view class="fz-26" wx:if="{{keywords.length > 0}}" style="padding: 15rpx;" bindtap="clearSearch">取消</view>
+        </view>
+    </view>
+
+    <view style="position: relative;" class="flex w-100">
+
+        <view class="flex-box-wrap fz-28" wx:if="{{showSearchList}}" style="background-color: #fff; z-index: 2;">
+            <view class="select-province-wrap search-data">
+                <scroll-view scroll-y class="in-scroll">
+                    <view data-id="{{item.id}}" wx:for="{{searchResult}}" class="item" bindtap="clickScenic">{{item.scenicName}}</view>
+                    <view wx:if="{{searchResult.length == 0 && keywords.length > 0}}" class="item c-gray">未找到关于"{{keywords}}"的景区</view>
+                </scroll-view>
+            </view>
+        </view>
+
+        <view class="flex-box-wrap fz-28" wx:if="{{showProvince}}" style="background-color: #fff; z-index: 1;">
+            <view class="province-lbs f-l" bindtap="clickCurrentProvince">{{currentProvince}} <text class="c-gray">当前定位省份</text></view>
+            <view class="province-title f-l">省份</view>
+            <view class="select-province-wrap">
+                <scroll-view scroll-y class="in-scroll">
+                    <view data-code="{{item.code}}" data-name="{{item.name}}" wx:for="{{province}}" class="item" bindtap="clickProvince">{{item.name}}</view>
+                </scroll-view>
+            </view>
+        </view>
+
+        <view class="flex-box-wrap" style=" display: flex;">
+
+            <view class="city-text-list" style="position: relative;">
+                <scroll-view scroll-y class="in-scroll" scroll-top="{{cityScrollTop}}">
+                    <view data-code="{{item.code}}" wx:for="{{city}}" class="item dis-c-center {{item.code == cityCode ? 'active': ''}}"  bindtap="clickCity">{{item.name}}</view>
+                </scroll-view>
+            </view>
+
+            <view style="flex: 1; position: relative; background-color: #fff;">
+
+                <view class="text-center" style="padding-top: 40%" wx:if="{{scenicList.length == 0}}">
+                    <image src="{{assetsPath}}wx-applet/no_spots_icon.png" style="width: 272rpx; height: 232rpx;"></image>
+                    <view class="c-gray fz-28 ptp-30">该地区暂无景点</view>
+                </view>
+
+                <scroll-view scroll-y class="in-scroll" wx:if="{{scenicList.length > 0}}">
+                    <view class="content-inner scenic-list" style="padding: 0.4rem;">
+                        <view data-id="{{item.id}}" class="scenic-item text-center" wx:for="{{scenicList}}" bindtap="clickScenic">
+                            <image class="scenic-pic" src="{{item.scenicCover}}"></image>
+                            <view class="fz-26 over-text">{{item.scenicName}}</view>
+                        </view>
+                    </view>
+                </scroll-view>
+                <!--泰山风景名胜区-->
+                <!--大泰山旅游圈-->
+                <!--徂徕山-->
+                <!--莲花山风景区-->
+                <!--东平湖风景区-->
+                <!--泰山世界地质公园-->
+            </view>
+
+        </view>
+
+<!--
+        <scroll-view scroll-y class="" style="">
+            <view class="weather-block">
+                <image class="weather-bg" src="{{assetsPath}}wx-applet/weather/day_no_rain.png" />
+                <view class="inner-cont dis-flex-c">
+                    <view class="flex dis-c-center">
+                        <view>
+                            <text class="csd">28° </text>
+                            <text>山下-1号检查站</text>
+                        </view>
+                    </view>
+                    <view class="dis-flex flex">
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/rain_icon.png" />
+                            </view>
+                            <view class="flex dis-c-center">
+                                <view>暂无降雨</view>
+                                <view class="sub-text">降雨量</view>
+                            </view>
+                        </view>
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/humidity_icon.png" /></view>
+                            <view class="flex dis-c-center">
+                                <view>59%</view>
+                                <view class="sub-text">湿度</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="dis-flex flex">
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/wind_icon.png" /></view>
+                            <view class="flex dis-c-center">
+                                <view>2级</view>
+                                <view class="sub-text">北风</view>
+                            </view>
+                        </view>
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/pressure_icon.png" /></view>
+                            <view class="flex dis-c-center">
+                                <view>1006 hPa</view>
+                                <view class="sub-text">实时气压</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </scroll-view>
+
+-->
+
+    </view>
+
+
+</view>

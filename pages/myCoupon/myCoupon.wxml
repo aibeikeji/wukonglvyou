@@ -1,0 +1,21 @@
+<view class="w-100" style="padding: 0 20rpx 100rpx">
+    <view wx:for="{{myCoupons}}" wx:for-index="idx">
+        <view class="cellBG" bindtap="selectFitCoupon" id="{{idx}}">
+            <view class="mainCellBG">
+                <image class="cardIMG" src="{{assetsPath}}wx-applet/preferential_picture.png"></image>
+                <view class="topTextView">
+                    <view class="cardTime">有效期至{{item.time}}</view>
+                    <view class="cardText">{{item.source}}</view>
+                </view>
+                <view class="cardMoney">{{item.amount}}元代金券</view>
+                <view class="midLine">
+                </view>
+                <view class="cardDiscribe">适用于{{item.cityId == "1" ? '全国' : item.cityName}}，不限用棒时段</view>
+            </view>
+        </view>
+    </view>
+    <view style=" padding-top: 345rpx; text-align: center; width: 100%;" wx:if="{{myCoupons.length == 0}}">
+        <image style="width: 286rpx; height: 174rpx;" src="{{assetsPath}}wx-applet/preferential_empty.png"></image>
+        <view style="padding-top: 50rpx;" class="fz-28">没有可用优惠</view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+/**userInfo.wxss**/
+.ac-list-pic { width: 260rpx; height: 200rpx;}
+.activity-cont { height: 200rpx;}
+.head-tab { background-color: #fff; width: 100%; text-align: center;}
+.head-tab-item text { padding: 0 28rpx; line-height: 94rpx; display: inline-block;}
+.head-tab .active { border-bottom: 6rpx #FFBB4A solid; color: #FFBB4A;}
+.in-activity { color: #FF4200;}
+

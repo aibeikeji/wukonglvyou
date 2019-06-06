@@ -1,0 +1,66 @@
+<!--userInfo.wxml-->
+<view class="container">
+    <view class="walletBanner bor-bot bor-tap">
+        <image src="{{assetsPath}}wx-applet/wallet_picture.png"></image>
+        <view class="mt-20 z" bindtap="tapName" >押金{{deposit}}元 <text wx:if="{{deposit>0}}">></text></view>
+        <view wx:if="{{isAuthByMayi}}" class="p-30 fz-26">
+            <image style="width: 40rpx; height: 40rpx; display: inline-block; vertical-align: middle; margin: 0 10rpx 2rpx 0" src="{{assetsPath}}wx-applet/certified_icon.png"></image>
+            已通过信用分免押金
+        </view>
+        <button class="bor-tap" size="mini" type="primary" wx:if="{{deposit < maxDeposit}}" bindtap="jumpChoice">充押金</button>
+        <button class="bor-tap" size="mini" type="primary" wx:if="{{deposit > 0}}" bindtap="refundDeposit">退押金</button>
+    </view>
+      <!-- 如果押金为0则显示去支付的按钮，如果押金不为0 - 如果全部押金充值完毕则显示押金退款，如果押金没有交完整则显示 去支付按钮和押金退款 -->
+         <!-- 此情况是当用户的押金为0的情况下 -->
+         <!-- <view wx:if="{{deposit == 0}}">
+            <view> 押金0元</view>
+            <button class="bor-tap" size="mini" type="primary" bindtap="jumpChoice">去支付</button>
+         </view>
+         view wx:else if="{{deposit >= maxDeposit}}">
+            <view>押金{{maxDeposit}}元</view>>
+            <button>押金退款</button>
+         </view> -->
+         <!-- 此情况下用户只充值了部分产品的押金 -->
+    
+    <view class="bor-t mod-col-list mt-20 w-100 flex">
+        <scroll-view class="w-100" scroll-y="true"  style="height: {{sHeight ? sHeight : '100%;'}}" bindscrolltolower="scrolltolower" lower-threshold="10">
+            <view class="mod-col-item">
+                <view class="flex">
+                    <view class="fz-26 c-gray">类型（时间）</view>
+                </view>
+                <text class="c-gray fz-26 pr-30">金额</text>
+            </view>
+            <view class="mod-col-item" wx:key="item.id" wx:for="{{jList}}" id="{{item.id}}" wx:for-item="item">
+                <view class="flex">
+                    <view>{{item.status == 1?'付款成功':'退款成功'}} ({{item.name}})</view>
+                    <view class="fz-26 c-gray">{{item.time}}</view>
+                </view>
+                <text class="c-gray fz-26 pr-30" wx:if="{{item.status == 1}}">+¥{{item.price}}</text>
+                <text class="c-orange fz-26 pr-30"  wx:else>-¥{{item.price}}</text>
+            </view>
+        </scroll-view>
+    </view>
+
+      <view class="mask" wx:if="{{hiddenName}}">
+        <view class="depositList">
+          <view class="depositHead">
+              <view class="center">押金明细</view>
+              <view class="close_icon" bindtap="closeBtn">
+                <image src="../../images/close_btn.png"></image>
+              </view>
+          </view>
+          <view class="deposit-item">
+              <scroll-view class="list" scroll-y style="width: 100%" bindscrolltolower="list">
+                <view class="items-content" wx:key="item.id" wx:for="{{Detailed}}" id="{{item.id}}" wx:for-item="item">
+                  <view>
+                    <text class="productName">{{item.modelName}}</text>
+                    <text class="productPrice">￥{{item.amount}}</text>
+                  </view>
+                  <view class="payTime">{{item.createTime}}</view>
+                </view>
+              </scroll-view>
+          </view>
+          <view class="totalMoney">押金余额{{deposit}}元</view>
+        </view>
+      </view>
+</view>

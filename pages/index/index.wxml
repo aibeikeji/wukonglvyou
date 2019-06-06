@@ -1,0 +1,244 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="head-left" bindtap="changeCity">
+      <view class="address">
+        <text>{{city}}</text>
+        <image class="down" src="../../images/icon-triangle-gray.png"></image>
+      </view>
+      <view class="wealter">
+        <image class="wealter-img" src="../../images/icons_weather_{{weatherimg}}.png"></image>
+        <text>{{weatherType}}{{temperature}}℃</text>
+      </view>
+    </view>
+    <view class="head-right">
+      <!-- <view class="search">
+         <navigator class="mod-col-item bor-tap list-navigator-hover" hover-class="list-navigator-hover" url="/pages/msgList/msgList">
+            <image src="../../images/search-dark.png" class="search-icon"></image>
+         </navigator>
+        </view> -->
+      <!-- <view class="message">
+           <navigator class="mod-col-item bor-tap list-navigator-hover" hover-class="list-navigator-hover" url="/pages/msgList/msgList">
+            <image src="../../images/msg-dark.png" class="message-icon"></image>
+         </navigator>
+        </view> -->
+    </view>
+  </view>
+
+  <scroll-view class="filter-bar" scroll-x="true">
+    <view scroll-x="true" class="bar-content">
+      <view wx:for="{{listItem}}" wx:key="id" wx:for-index="i" class="tab-item {{productTypeID ==item.id ? 'active' : ''}}" bindtap="swPoint" id="{{item.id}}">
+        <text>{{item.typeName}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="reserve-box bor-top" wx:if="{{dialogType == 1}}">
+    <!-- //此状态是点击产品出现产品所在的位置以及告诉用户过去需要多久 -->
+    <view class="cycling-box bor-tap">
+      <view class="flex plr-30 bor-right bor-tap dis-flex-center" bindtap="openMarkDialog">
+        <view class="fz-42">
+          <text class="fz-42" wx:if="{{reserveInfo.isMa}}">NO.</text>{{reserveInfo.agentName}}</view>
+        <view class="reserve-info">
+          <image src="{{assetsPath}}wx-applet/location_icon.png"></image>
+          <view class="over-text fz-24"> {{reserveInfo.locationDesc || reserveInfo.address}}</view>
+        </view>
+      </view>
+      <view class="reserve-bell dis-flex-center" bindtap="openWXMapPage">
+        <image class="ico-bell" src="{{assetsPath}}wx-applet/gps_icon_n.png" style="margin: 0 auto;"></image>
+        <view class="fz-28">前往</view>
+      </view>
+    </view>
+    <view class="reserve-state fz-26 bor-t-b">
+      <image src="{{assetsPath}}wx-applet/umbrella_icon.png" style="vertical-align: text-bottom;"></image>{{reserveInfo.idlePositionNum!=Undefined ? "该桩机": "该驿站"}}可借产品
+      <text class="fz-26 c-orange">{{reserveInfo.existUmbrellNum}}</text> 件
+      <text class="fz-26" wx:if="{{reserveInfo.idlePositionNum!=Undefined }}">, 可还产品 <text class="fz-26 c-orange">{{reserveInfo.idlePositionNum}}</text> 件</text>
+    </view>
+  </view>
+
+  <view class="reserve-box" wx:if="{{dialogType == 6}}">
+    <!-- //此处是异常的处理 -->
+    <view class="reserve-state dis-flex fz-26" style="align-items: center;">
+      <image src="{{assetsPath}}wx-applet/report_remind.png" style="width: 46rpx; height: 46rpx;"></image>
+      <view class="flex" style="line-height: 1.8;">我们已收到异常通知，您本次使用产品将会正常结费，您的账户将在确认后恢复使用产品。</view>
+    </view>
+  </view>
+
+  <view class="reserve-box" wx:if="{{dialogType == 2 || dialogType == 7 || dialogType == 8 || dialogType == 9}}">
+    <view class="dis-flex buy-tips-bar" wx:if="{{dialogType == 7 || dialogType == 8 || dialogType == 9}}" style="">
+      <!-- 此处是用户使用产品超过一天，询问用户是否购买产品 -->
+      <view class="flex fz-28">{{riding.umbrellaBuy.buyOrderDesc}}，建议购买产品</view>
+      <view style="padding-left: 20rpx;">
+        <button class="buy-button" bindtap="buyWinOpen">购买产品</button>
+      </view>
+    </view>
+
+
+
+    <view class="cycling-box bor-t-b" wx:if="{{dialogType == 8 || dialogType == 9}}">
+      <view class="flex plr-30 dis-flex-c dis-f-c bor-right bor-tap" bindtap="openMarkDialog">
+        <view class="fz-42">
+          <text class="fz-42" wx:if="{{reserveInfo.isMa}}">NO.</text>{{reserveInfo.agentName}}</view>
+        <view class="reserve-info">
+          <image src="{{assetsPath}}wx-applet/location_icon.png"></image>
+          <view class="over-text fz-24"> {{reserveInfo.locationDesc || reserveInfo.address}}</view>
+        </view>
+      </view>
+      <view class="reserve-bell bor-tap text-center dis-flex-c dis-f-c" bindtap="openWXMapPage">
+        <image class="ico-bell" src="{{assetsPath}}wx-applet/gps_icon_n.png" style="margin: 0 auto;"></image>
+        <view class="fz-28">前往</view>
+      </view>
+    </view>
+
+    <view class="reserve-state fz-26 bor-bot" wx:if="{{reserveInfo.isMa}}">
+      <image src="{{assetsPath}}wx-applet/umbrella_icon.png"></image>{{reserveInfo.idlePositionNum!=Undefined ? "该桩机": "该驿站"}}可借产品
+      <text class="fz-26 c-orange">{{reserveInfo.existUmbrellNum}}</text> 件
+      <text class="fz-26"  wx:if="{{reserveInfo.idlePositionNum!=Undefined }}">, 可还产品 <text class="fz-26 c-orange">{{reserveInfo.idlePositionNum}}</text> 件</text>
+    </view>
+    <view class="reserve-state fz-26 bor-bot bor-tap dis-flex">
+      <view class="flex">
+        <image src="{{assetsPath}}wx-applet/lock_icon.png" style="vertical-align: middle;"></image>
+        <text class="text-vc">归还即可结束使用</text>
+      </view>
+      <view class="c-orange bor-tap" style="text-align: right;" bindtap="closeLockHaveNotEnd">
+        <text class="text-vc">归还后未结束？</text>
+      </view>
+    </view>
+    <view class="dis-flex flex reserve-box-main">
+      <view class="flex text-center dis-flex-c dis-f-c">
+        <view class="c-green fz-50">{{riding.time}}</view>
+        <text class="fz-24">使用时长(min)</text>
+      </view>
+      <view class="flex text-center dis-flex-c dis-f-c" wx:if='{{productType==1}}'>
+        <view class="c-green fz-50">{{riding.electricity}}</view>
+        <text class="fz-24">剩余电量(%)</text>
+      </view>
+      <view class="flex text-center dis-flex-c dis-f-c">
+        <view class="c-green fz-50">{{riding.price}}</view>
+        <text class="fz-24">预计费用(元)</text>
+      </view>
+      <view class="reserve-qrcode text-center dis-flex-c dis-f-c dis-f-vc" bindtap="openQrCodeDialog">
+        <image src="{{assetsPath}}wx-applet/shows_qr_n.png"></image>
+        <view class="c-white fz-24" style="padding-top: 10rpx;">归还</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="reserve-box" wx:if="{{dialogType == 3 || dialogType == 4}}">
+
+    <view class="cycling-box bor-t-b">
+      <view class="flex plr-30 dis-flex-c dis-f-c bor-right bor-tap" bindtap="openMarkDialog">
+        <view class="fz-42">
+          <text class="fz-42" wx:if="{{reserveInfo.isMa}}">NO.</text>{{reserveInfo.agentName}}</view>
+        <view class="reserve-info">
+          <image src="{{assetsPath}}wx-applet/location_icon.png"></image>
+          <view class="over-text fz-24"> {{reserveInfo.locationDesc || reserveInfo.address}}</view>
+        </view>
+      </view>
+      <view class="reserve-bell bor-tap text-center dis-flex-c dis-f-c" bindtap="openWXMapPage">
+        <image class="ico-bell" src="{{assetsPath}}wx-applet/gps_icon_n.png" style="margin: 0 auto;"></image>
+        <view class="fz-28">前往</view>
+      </view>
+    </view>
+    <view class="reserve-state fz-26 bor-bot" wx:if="{{reserveInfo.isMa}}">
+      <image src="{{assetsPath}}wx-applet/umbrella_icon.png"></image>{{reserveInfo.idlePositionNum!=Undefined ? "该桩机": "该驿站"}}可借产品
+      <text class="fz-26 c-orange">{{reserveInfo.existUmbrellNum}}</text> 件
+      <text class="fz-26"  wx:if="{{reserveInfo.idlePositionNum!=Undefined }}">, 可还产品 <text class="fz-26 c-orange">{{reserveInfo.idlePositionNum}}</text> 件</text>
+    </view>
+    <view class="reserve-state fz-26 bor-bot bor-tap dis-flex">
+      <view class="flex">
+        <image src="{{assetsPath}}wx-applet/lock_icon.png" style="vertical-align: middle;"></image>
+        <text class="text-vc">归还即可结束使用</text>
+      </view>
+      <view class="c-orange bor-tap" style="text-align: right;" bindtap="closeLockHaveNotEnd">
+        <text class="text-vc">归还后未结束？</text>
+      </view>
+    </view>
+    <view class="dis-flex flex reserve-box-main">
+      <view class="flex text-center dis-flex-c dis-f-c">
+        <view class="c-green fz-50">{{riding.time}}</view>
+        <text class="fz-24">使用时长(min)</text>
+      </view>
+      <view class="flex text-center dis-flex-c dis-f-c" wx:if='{{productType==1}}'>
+        <view class="c-green fz-50">{{riding.electricity}}</view>
+        <text class="fz-24">剩余电量(%)</text>
+      </view>
+      <view class="flex text-center dis-flex-c dis-f-c">
+        <view class="c-green fz-50">{{riding.price}}</view>
+        <text class="fz-24">预计费用(元)</text>
+      </view>
+      <view class="reserve-qrcode text-center dis-flex-c dis-f-c dis-f-vc" bindtap="openQrCodeDialog">
+        <image src="{{assetsPath}}wx-applet/shows_qr_n.png"></image>
+        <view class="c-white fz-24" style="padding-top: 10rpx;">归还</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="index-map-box" style=" display: {{mapDis}}; height: {{mapHeight}}%">
+    <view style="top: {{mapImage ? '200%' : '0'}}; position: absolute; bottom: 0; width: 100%; height: 100%;">
+      <map id="myMap" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" controls="{{controls}}" bindtap="indexTapMap" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange"
+        include-points="{{includePoints}}" show-location style="width: 100%; height: 100%">
+        <!--<cover-view class="cover-filter">-->
+        <!--<cover-view class="cover-open-box">-->
+        <!--</cover-view>-->
+        <!--<cover-view class="cover-open-box">-->
+        <!--<cover-image style="width: 332rpx; height: 308rpx; position: absolute; left: 0; top: 0;" src="../../map/map_screen_s.png"></cover-image>-->
+        <!--<cover-view class="cover-open-cont">-->
+        <!--<cover-view class="cover-open-item"><cover-image class="ico-screen" src="../../map/screen_umbrella.png"></cover-image> 棒机 </cover-view>-->
+        <!--<cover-view class="cover-open-item"><cover-image class="ico-screen" src="../../map/screen_branch.png"></cover-image> 驿站  </cover-view>-->
+        <!--</cover-view>-->
+        <!--</cover-view>-->
+        <!--</cover-view>-->
+      </map>
+    </view>
+    <image style="width: 100%; height: 100%" src="../../map/ditu.jpg"></image>
+
+    <view class="win-dialog" style="display: {{mapImage? 'block' : 'none'}};">
+      <view class="w-dia-box">
+        <view class="w-dia-content text-left">
+          <image class="w-dia-close" src="{{assetsPath}}wx-applet/cancel.png" bindtap="closeMarkDialog"></image>
+          <image class="dia-pic-info" src="{{assetsPath}}wx-applet/{{qrDialog?'scanning_img':'instructions_icon'}}.png"></image>
+
+          <view style="display: {{isShowBuy? 'block' : 'none'}};">
+            <view class="w-dia-title">产品购买</view>
+            <view class="c-red fz-28">{{umbrellaBuy.buyOrderDesc}}</view>
+            <view class="fz-28" style="padding-top: 20rpx;">
+              <view class="item" wx:for="{{sysInfo.umbrellaNotices}}">{{item}}</view>
+            </view>
+
+            <view class="text-center p-30">
+              <button type="primary" data-cid="{{umbrellaBuy.orderCode}}" style="width: 220rpx;" class="fz-28" bindtap="umbrellaBuyAction">¥ {{umbrellaBuy.umbrellaPrice}}/件</button>
+            </view>
+          </view>
+
+          <view style="display: {{isShowBuy? 'none' : 'block'}};">
+            <!-- //还棒需要驿站工作人员扫描二维码 -->
+            <view class="w-dia-title">{{qrDialog?'请让驿站人员扫下方二维码':'地点详细信息'}}</view>
+            <view wx:if="{{!qrDialog}}">
+              <view class="dis-flex mt-20 fz-26">
+                <view class="">详细地址：</view>
+                <view class="flex c-gray">{{reserveInfo.address}}</view>
+              </view>
+              <view wx:if="{{!reserveInfo.isMa}}" class="dis-flex mt-20 fz-26">
+                <view class="">营业时间：</view>
+                <view class="flex c-gray">{{reserveInfo.businessTime}}</view>
+              </view>
+              <view wx:if="{{!reserveInfo.isMa}}" class="dis-flex mt-20 fz-26">
+                <view class="">联系电话：</view>
+                <view class="flex c-orange" data-phone="{{reserveInfo.agentPhone}}" bindtap="callMe">{{reserveInfo.agentPhone}}</view>
+              </view>
+            </view>
+            <canvas wx:if="{{qrDialog}}" bindtap="previewImg" style=" margin: 0 auto; width: {{sW * 0.6}}px;height: {{sW * 0.6}}px;background:#f1f1f1;" canvas-id="mycanvas" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 此处是新增加的判断用户是否是第一次借用产品 -->
+  <view class="firstBorrow" wx:if="{{firstUPrompt}}">
+    <view class="first-content">
+      <image src="../../images/prompt.png"></image>
+    </view>
+  </view>
+</view>

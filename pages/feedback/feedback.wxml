@@ -1,0 +1,34 @@
+<!--feedback.wxml-->
+<view class="container">
+    <view class="feedback-wrap">
+        <view class="fb-code-box m-30" wx:if="{{typeId == 1}}">
+            <input class="flex" value="{{inputVal}}" id="code" name="code" placeholder="请输入桩机编号"  type="number" placeholder-class="pl-style" bindinput="inputValue" />
+            <view class="fb-code-btn" bindtap="scanFeedback"><image src="{{assetsPath}}wx-applet/feedback_qr.png"></image></view>
+        </view>
+        <view class="m-30" style="border-bottom: 1px #ededed solid; padding-bottom: 10rpx;" wx:if="{{typeId == 2 || typeId == 3}}">订单编号：{{tripId}}</view>
+        <view class="flex p-30">
+            <view class="c-light-gray fz-24">请选择问题类型</view>
+            <view class="fb-problem-list">
+                <view wx:for="{{problem}}" id="{{item.id}}" wx:for-item="item" bindtap="selectProblemAction" class="{{item.id == selectId? 'active' : ''}}">{{item.name}}</view>
+                <view wx:if="{{problem2.length > 0}}" id="{{selectId}}" bindtap="feedbackMoreAction" class="{{selectAll? 'active' : ''}}">更多问题</view>
+            </view>
+            <textarea id="text" name="text" placeholder="请描述遇到的问题和建议"  type="text" placeholder-class="pl-style" bindinput="inputValue"></textarea>
+            <view class="c-light-gray fz-24">上传照片（{{files.length}}/4）</view>
+            <view class="fb-upimg-list">
+                <view wx:for="{{files}}" id="{{item.id}}" wx:for-item="item" wx:for-index="idx">
+                    <image class="upimg" src="{{item.url}}"></image>
+                    <image class="remove-img" src="{{assetsPath}}wx-applet/shut_down_icon.png" bindtap="removeUpload" id="up_{{idx}}"></image>
+                </view>
+                <view class="fb-up-btn" wx:if="{{files.length < 4}}" bindtap="chooseImage"><image src="{{assetsPath}}wx-applet/upload_pictures.png"></image></view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class=" w-100 c-bg-white">
+        <view class="p-30 mt-20">
+            <button type="primary" class="c-bg-green" disabled="{{disabled}}" bindtap="feedbackAction">提交</button>
+        </view>
+    </view>
+
+</view>

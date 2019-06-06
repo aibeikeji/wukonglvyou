@@ -1,0 +1,28 @@
+<!--regSuccess.wxml-->
+<view class="container">
+
+    <view class="reg-ico-box">
+        <image class="reg-success-ico" src="{{assetsPath}}wx-applet/complete_icon.png"></image>
+    </view>
+    <view class="reg-success-title">恭喜您验证成功!</view>
+    <view class="c-gray"><text>填写好友的专属邀请码!</text></view>
+
+    <view class="flex w-100 mt-50">
+        <view class="bor-t-b mod-col-list mt-20">
+            <view class="mod-col-item">
+                <view class="mod-input-title add_width">
+                    <text class="flex">邀请码(选填)</text>
+                </view>
+                <view class="section">
+                    <input class="inp-text" value="{{code}}" bindinput="inputVal" type="text" placeholder="输入好友的专属邀请码" placeholder-class="pl-style"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="p-30 mt-20">
+            <button type="primary" class="c-bg-green nexB" bindtap="inputCode">下一步</button>
+        </view>
+
+    </view>
+
+</view>

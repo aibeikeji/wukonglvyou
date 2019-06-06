@@ -1,0 +1,17 @@
+<!--userInfo.wxml-->
+<view class="container">
+
+    <view class="flex w-100">
+        <view class="bor-t-b mod-col-list mt-20 bor-tap-z">
+            <navigator class="mod-col-item bor-tap" wx:for="{{articleList}}" id="{{item.id}}" wx:for-item="item" url="/pages/article/article?cid={{item.id}}" hover-class="list-navigator-hover" bindtap="changeUrl"  wx:if="{{item.id!=19}}">
+                <text class="flex">{{item.title}}</text>
+                <image class="ico-col-arrow pr-30" src="{{assetsPath}}wx-applet/right_arrow.png"></image>
+            </navigator>
+            <navigator class="mod-col-item bor-tap" wx:for="{{articleList}}" id="{{item.id}}" wx:for-item="item" url="/pages/abouts/abouts" hover-class="list-navigator-hover" bindtap="changeUrl"  wx:if="{{item.id==19}}">
+                <text class="flex">{{item.title}}</text>
+                <image class="ico-col-arrow pr-30" src="{{assetsPath}}wx-applet/right_arrow.png"></image>
+            </navigator>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,15 @@
+/**mobileBind.wxss**/
+.pos-r-btn { position: absolute; top: 0; bottom: 0; right: 30rpx; padding: 20rpx 0 0 30rpx;}
+.comp{
+  border-radius:40rpx;
+  background:#FFC63A
+}
+.links{
+  font-size:24rpx;
+  text-align: center;
+}
+.redColor{
+  color:red;
+  font-size:24rpx;
+}
+

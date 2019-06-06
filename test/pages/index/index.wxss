@@ -1,0 +1,20 @@
+/**index.wxss**/
+.page{
+    height: 100%;
+    width: 100%;
+}
+.btn_changeTimestamp{
+    width:400rpx;
+    height:100rpx;
+    margin-top: 20rpx;
+    background:#0099FF;
+}
+
+.v_beforetime{
+    margin-top: 20rpx;
+    background:#C0C0C0;
+}
+.v_aftertime{
+    margin-top: 20rpx;
+    background:#FF0000;
+}

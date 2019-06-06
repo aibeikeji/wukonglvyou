@@ -1,0 +1,26 @@
+<!--pages/city/citylist/citylist.wxml-->
+<view class="content">
+  <view class="search" bindtap="jumpSearch">
+    <view class="icon_search"><image src="../../../images/icon_search.png"></image></view>
+    <view class="text">搜索</view>
+  </view>
+  <view class="now-city">
+  <view class="now-title">当前定位城市</view>
+  <view class="now-content" data-city="{{cityName}}" catchtap="bindCity">{{cityName}}</view>
+  </view>
+  <view class="all-city" style="height:{{winHeight}}rpx">
+    <view class="all-city-left">
+    <scroll-view scroll-y style='width:100%;height:100%;' scroll-into-view="{{toUp}}">
+        <view class="left-item" wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName" wx:if="{{idx != '热门城市'}}" id="{{idx}}">
+        <view class="letter-text">{{idx}}</view>
+        <block wx:for="{{cityName}}" data-city="{{item.cityName}}">
+          <view class="cityName-left" data-city="{{item.name}}" catchtap="bindCity">{{item.name}}</view>
+        </block>
+        </view>
+    </scroll-view>
+    </view>
+    <view class="all-city-right">
+    <text class='letter_item' wx:for='{{letter}}' wx:key='this' catchtap='letterTap' data-item='{{item}}'>{{item}}</text>
+    </view>
+  </view>
+</view>

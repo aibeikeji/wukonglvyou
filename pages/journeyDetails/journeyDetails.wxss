@@ -1,0 +1,29 @@
+/**userInfo.wxss**/
+.journey-map { display: flex; height: 30vh; width: 100%; flex-direction: column;}
+.journey-map map { flex: 1; height: 30vh;}
+
+.journey-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1; background-color: #fff; width: 100%;}
+.journey-wrap .userinfo-avatar { position: absolute; top: 0rpx; margin-left: 60rpx; width: 100rpx; height: 100rpx;}
+.journey-wrap .userinfo-avatar image { width: 100rpx; height: 100rpx; }
+.journey-user-name { padding: 36rpx 0 0 180rpx;}
+.journey-ico { margin: 8rpx 15rpx 0 0; width: 42rpx; height: 42rpx;vertical-align: middle; }
+.journey-box { display: flex; align-items: center;}
+.journey-item { flex: 1; padding-top: 43rpx; text-align: center;}
+.journey-item .fz-50 { line-height: 1.2;}
+.journey-text { display: inline-block; text-align: left; vertical-align: top;}
+.journey-text .sub-title { font-size: 24rpx; color: #888;}
+.journey-footer { flex: 1; margin: 43rpx 30rpx 0; display: flex; flex-direction: column; justify-content: center; text-align: center;}
+.journey-ft-main { margin-bottom: 20rpx;}
+.journey-ft-main image { width: 38rpx; height: 42rpx; margin: 0 14rpx 4rpx 0; vertical-align: middle;}
+
+.share-button image { width: 42rpx; height: 42rpx; display: block; margin: 0 auto;}
+.share-button { position: absolute; bottom: 30rpx; width: 290rpx; left: 50%; margin-left: -145rpx; background-color: transparent; font-size: 28rpx;}
+.orderMsg{
+  text-align: center;
+  color:#999;
+  font-size:24rpx;
+}
+.orderMsg text{
+  color:#999;
+  font-size:24rpx;
+}

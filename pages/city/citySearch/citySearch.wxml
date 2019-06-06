@@ -1,0 +1,19 @@
+<view class="content">
+    <view class="search-input">
+      <view class="input-left">
+        <view class="icon-search">
+        <image src="../../../images/icon_search.png"></image>
+        </view>
+        <input type="text" placeholder='搜索' class="search-text" value="{{searchValue}}" bindinput='input1' bindconfirm='confirm1'  />
+      </view>
+      <view class="input-right" bindtap="clickCancel">取消</view>
+    </view>
+    <view class="search-result">
+      <view class="result-title">搜索结果</view>
+      <view class="result-con">
+      <scroll-view scroll-y='true' style='width:100%;height:100%;'>
+       <view wx:for="{{searchResult}}" data-id="{{item}}" class="result-item" bindtap="obtainVal">{{item}}</view>
+      </scroll-view>
+      </view>
+    </view>
+</view>

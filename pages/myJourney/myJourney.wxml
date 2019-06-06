@@ -1,0 +1,54 @@
+<!--myJourney.wxml-->
+
+
+    <scroll-view class="w-100 hei" scroll-y="true"  bindscrolltolower="scrolltolower" lower-threshold="3">
+
+        <view class="mod-col-list mt-20 w-100">
+            <view class="mod-col-item" wx:for="{{jList}}" id="{{item.code}}" wx:for-item="item" bindtap="journeyDetailsAction">
+                <view class="flex">
+                    <view>{{item.time}}</view>
+                    <view class="fz-26 c-gray">NO.{{item.code}}</view>
+                </view>
+                <view class="c-orange fz-28 pr-30 text-center">
+                    订单费用：{{item.price ? item.price : 0}}元
+                    <view class="fz-28 c-gray" wx:if="{{item.payType == 'umbrella_buy'}}">(已购买金箍棒)</view>
+                </view>
+            </view>
+        </view>
+        <!-- 此处是重构我的订单的界面 -->
+        <!-- <view class="orderList">
+          <view class="orderItem">
+            <view class="orderIDtIime">
+              <view class="typeOrder">
+                <view class="typeImg"><image></image></view>
+                <view class="idType">
+                  <view class="titleId">NO.549376983208535739</view>
+                  <view>使用登山杖</view>
+                </view>
+              </view>
+              <view class="timer">
+                <view class="timer-icon"><image src="../../images/icon_time.png"></image></view>
+                <view class="user-data">2018-06-29</view>
+                <view>使用4小时28分</view>
+              </view>
+              <view class="starEnd">
+                <view class="twoIcon"></view>
+                <view>
+                  <view>借:<text class="padLeft">泰安市泰山景区驿站</text></view>
+                  <view>还:<text class="padLeft">泰安市泰山旅游服务区</text></view>
+                </view>
+              </view>
+            </view>
+            <view class="orderStatusPay">
+              <view class="orderStatus">已完成</view>
+              <view class="orderPay">￥<text>5.4</text></view>
+            </view>
+          </view>
+        </view> -->
+
+        <view style=" padding-top: 260rpx; text-align: center; width: 100%;" wx:if="{{jList.length == 0}}">
+            <image style="width: 334rpx; height: 278rpx;" src="{{assetsPath}}wx-applet/trip_empty.png"></image>
+            <view style="padding-top: 50rpx;" class="fz-28">还没有任何记录</view>
+        </view>
+
+    </scroll-view>

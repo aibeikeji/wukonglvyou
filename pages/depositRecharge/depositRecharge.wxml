@@ -1,0 +1,18 @@
+<!--pages/depositRecharge/depositRecharge.wxml-->
+<view>
+  <view class="refund-alter">
+   可支付押金产品
+  </view>
+  <view class="refund-list"> 
+    <view class="refund-item {{arr[index]}}" data-index='{{index}}' data-waitPay='{{item.pdDeposit}}' wx:for="{{productList}}" wx:for-index="index" wx:for-item="item" id="{{item.pdModelId}}" bindtap="clickCancel">
+    <view data-index='{{index}}'>
+      <view class="pName">{{item.modelName}}</view>
+      <view class="pPrice">￥{{item.pdDeposit}}</view>
+    </view>
+    </view>
+  </view>
+  <view class="wait-refund">待支付押金{{waitPay}}元</view>
+  <view class="refund-btn">
+    <button bindtap='waitPays'>去支付</button>
+  </view>
+</view>

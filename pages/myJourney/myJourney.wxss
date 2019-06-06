@@ -1,0 +1,126 @@
+/**myJourney.wxss**/
+page { 
+  position: fixed; 
+  top: 0;
+  height: 100%; 
+  overflow: hidden;
+  left: 0; 
+  width: 100%;
+  background:#fff;
+  }
+.orderList{
+  width:100%;
+  height:auto;
+  background:#fff;
+}
+.orderItem{
+  margin-top:24rpx;
+  margin-left:30rpx;
+  margin-right:30rpx;
+  margin-bottom:38rpx;
+  height:284rpx;
+  border-radius:16rpx;
+  box-shadow:0px 2px 5px 5px #eee;
+  box-sizing:content;
+  position:relative;
+}
+.orderIDtIime{
+  position:absolute;
+  top:0;
+  left:20rpx;
+}
+.typeOrder{
+  display:flex;
+  justify-content: flex-start;
+}
+.typeImg{
+  display:inline-block;
+  width:52rpx;
+  height:52rpx;
+  background:red;
+  margin-top:34rpx;
+}
+.typeImg img{
+  width:100%;
+  height:100%;
+}
+.idType{
+  margin-left:16rpx;
+  color:#B2B2B2;
+  font-size:22rpx;
+  margin-top:30rpx;
+}
+.titleId{
+  font-size:24rpx;
+}
+.timer{
+  display:flex;
+  justify-content: flex-start;
+  font-size:28rpx;
+  color:#888888;
+  margin-top:30rpx;
+  margin-bottom:20rpx;
+}
+.timer-icon{
+  display:inline-block;
+  width:20rpx;
+  height:20rpx;
+  margin-left:20rpx;
+  margin-right:10rpx;
+}
+.timer-icon image{
+  width:100%;
+  height:100%;
+}
+.user-data{
+  margin-right:20rpx;
+}
+.starEnd{
+  color:#888;
+  font-size:28rpx;
+  display:flex;
+  justify-content: flex-start;
+  margin-left:30rpx;
+}
+.twoIcon{
+  position:relative;
+  width:2rpx;
+  height:44rpx;
+  background:#B2B2B2;
+  top:20rpx;
+  margin-right:24rpx;
+}
+.twoIcon:before,.twoIcon:after{
+  position:absolute;
+  content:'';
+  width:8rpx;
+  height:8rpx;
+  border-radius:50%;
+  background:#B2B2B2;
+  left:-2rpx;
+}
+.twoIcon:before{
+  top:-4rpx;
+}
+.twoIcon:after{
+  bottom:-4rpx;
+}
+.padLeft{
+  margin-left:8rpx;
+}
+.orderStatusPay{
+  position:absolute;
+  right:30rpx;
+  top:0;
+}
+.orderStatus{
+  color:#999999;
+  font-size:24rpx;
+  margin-top:50rpx;
+}
+.orderPay{
+  color:#000;
+  font-size:32rpx;
+  font-weight:bold;
+  margin-top:130rpx;
+}

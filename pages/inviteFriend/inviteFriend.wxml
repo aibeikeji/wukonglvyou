@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="myContainer">
+        <view class="flex">
+            <image class="topImg" src="{{assetsPath}}wx-applet/invite_friends_picture.png">
+            </image>
+            <view class="black text1" wx:if="{{money > 0}}">邀请1位好友注册您将获得</view>
+            <view class="black text2" wx:if="{{money > 0}}">{{money}}元优惠券奖励</view>
+            <view class="gray text3">您的邀请码为:</view>
+            <view class="black text4">{{code}}</view>
+        </view>
+        <button class="share-button text-center" open-type="share">
+            <image src="{{assetsPath}}wx-applet/share_icon.png"></image>
+            <view class="fz-28">分享给好友</view>
+        </button>
+    </view>
+
+
+</view>

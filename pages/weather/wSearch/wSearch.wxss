@@ -1,0 +1,67 @@
+.dis-v-center { display: flex; align-items: center;}
+.dis-c-center { display: flex; flex-direction: column; justify-content: center;}
+
+.weather-bg { width: 696rpx; height: 350rpx;}
+
+.weather-block { position: relative; color: #fff;}
+.weather-block .inner-cont { position: absolute; top: 0;width: 100%; left: 0; bottom: 10rpx;}
+.weather-block .csd { padding-left: 5%;}
+.weather-block .sub-text { opacity: 0.6;}
+.weather-pic { padding-left: 20%;}
+
+
+.weather-block { margin: 30rpx; font-size: 28rpx; /*px*/}
+.weather-ico { width: 44rpx; height: 44rpx;}
+
+.weather-block .csd {font-size: 80rpx; /*px*/}
+.weather-block .sub-text { font-size: 26rpx; /*px*/}
+.weather-pic { padding-right: 12rpx;}
+.weather-block .csd {font-size: 80rpx;}
+.search-bar { width: 100%; height: 100rpx; padding: 16rpx; background-color: #fff;}
+
+.searchbar { display: flex;}
+
+.search-input { background-color: #eaeaea; border-radius: 10rpx;}
+.search-text {height: 68rpx; line-height: 68rpx;}
+
+.icon-search {}
+.icon-search image { width: 26rpx; height: 26rpx;}
+
+.in-scroll { position: absolute; width: 100%; top: 0; bottom: 0; left: 0;}
+
+.flex-box-wrap { position: absolute; top: 1rpx; bottom: 0; width: 100%; left: 0; overflow: hidden;}
+.current-province { padding: 10rpx 20rpx 0 5rpx; background-color: #fff; font-size: 30rpx;}
+
+.city-text-list { width: 188rpx;}
+.city-text-list .active { background-color: #fff; color: #000; position: relative;}
+
+.city-text-list .active:after {
+    content: ' ';
+    position: absolute;
+    background-color: #FFBB4A;
+}
+.province-lbs,.province-title { padding-left: .4rem;}
+.province-title { background-color: #eaeaea; color: #888;}
+.select-province-wrap {position: absolute;bottom: 0; width: 100%;}
+
+.scenic-pic { width: 250rpx; height: 170rpx;}
+
+.city-text-list .item { height: 88rpx; /*px*/ font-size: 28rpx; /*px*/ padding-left: 36rpx;}
+.city-text-list .active:after {
+    top: 20rpx; /*px*/
+    bottom: 20rpx; /*px*/
+    left: 0;
+    width: 6rpx; /*px*/
+}
+.province-lbs { height: 80rpx; line-height: 80rpx;}
+.province-title { height: 50rpx; line-height: 50rpx;}
+
+.select-province-wrap {top: 130rpx; /*px*/}
+.select-province-wrap  .item { line-height: 80rpx; height: 80rpx; /*px*/ font-size: 28rpx; /*px*/ margin-left: 36rpx;
+    border-bottom: 1rpx #e5e5e5 solid;
+}
+.search-data {top: 0; /*px*/}
+
+.s-arrow-g,.s-arrow-o { width: 21rpx; height: 12rpx; margin: 0; vertical-align: middle;}
+
+.scenic-item { display: inline-block; width: 50%; font-size: 28rpx; padding-bottom: 30rpx;}

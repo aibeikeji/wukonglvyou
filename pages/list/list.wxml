@@ -1,0 +1,60 @@
+<!--pages/list/list.wxml-->
+<view class="content">
+  <view class="meList">
+    <view class="meMessage" >
+        <view class="meImg meImg2"  data-top="0" data-praiseNum="0">
+        <view class="ranking"></view>
+        <view class="bangTop">
+          <view class="top1">
+          </view>
+          <view class="userPic"><open-data class='open' type='userAvatarUrl'></open-data></view>
+          
+        </view>
+        <view class="nameTime">
+          <open-data class="userName" type='userNickName'></open-data>
+          
+          <view class="userTime">暂未参加活动</view>
+        </view>
+        </view>
+        <view class="meGive" style='left:30rpx;' bindtap="change" data-index="20">
+          <view class="giveNum">0</view>
+          <view class="meLike">
+            <image src="../../images/{{img[20]}}.png" ></image>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class="totalList">
+    <view class='totalitems'>
+      <scroll-view scroll-y class="scrollHeight">
+            <view class="meItems" wx:for="{{bangList}}" wx:for-index="items" wx:for-item="item">
+              <view class="meMessage">
+                <view class="meImg meImgs" bindtap="giveDetail" data-top="{{item.top}}" data-praiseNum="{{item.praiseNum}}">
+                <view class="ranking">{{item.top}}</view>
+                <view class="bangTop">
+                  <view class="top1">
+                    <image src="../../images/top1.png" wx:if="{{item.top==1}}"></image>
+                    <image src="../../images/top2.png" wx:if="{{item.top==2}}"></image>
+                    <image src="../../images/top3.png" wx:if="{{item.top==3}}"></image>
+                    <image></image>
+                  </view>
+                  <view class="userPic"><image src="https://api.ryjgb.net/{{assetsPath}}wx-applet/user{{items+1}}.png"></image></view>
+                </view>
+                <view class="nameTime">
+                  <view  class="userName">{{item.name}}</view>
+                  <view class="userTime">用时{{item.time}}</view>
+                </view>
+                </view>
+                <view class="meGive" bindtap="change" data-index="{{items}}">
+                  <view class="giveNum">{{item.praiseNum}}</view>
+                  <view class="meLike">
+                    <!-- <image src="../../images/like.png"></image> -->
+                    <image src="../../images/{{img[items]}}.png"></image>
+                  </view>
+                </view>
+            </view>
+            </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

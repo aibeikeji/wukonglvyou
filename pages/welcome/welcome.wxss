@@ -1,0 +1,47 @@
+/* pages/welcome/welcome.wxss */
+page{
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+.content{
+  width:100%;
+  height:100%;
+}
+.wel-logo{
+  width:180rpx;
+  height:224rpx;
+  margin:78rpx auto 80rpx auto;
+}
+.wel-logo image{
+  width:100%;
+  height:100%;
+}
+.wel-text{
+  margin:0 72rpx 122rpx 70rpx;
+  font-size:32rpx;
+  color:#333;
+}
+.wel-alter{
+  font-size:28rpx;
+  color:#666;
+  margin-top:24rpx;
+  height:20rpx;
+  display:flex;
+  align-items: center;
+}
+.cicle{
+  width:10rpx;
+  height:10rpx;
+  border-radius:50%;
+  background:#666;
+  margin-right:16rpx;
+}
+.wel-btn{
+  width:86%;
+  margin:0 auto;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(255,223,95,1) 0%,rgba(255,198,58,1) 100%);
+  border-radius:44px;
+  color:#fff;
+}

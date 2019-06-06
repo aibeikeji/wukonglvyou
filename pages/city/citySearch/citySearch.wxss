@@ -1,0 +1,68 @@
+/* pages/city/citySearch/citySearch.wxss */
+
+page{
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+.content,.result-con{
+  height: 100%;
+}
+.search-input{
+  width:100%;
+  height:60rpx;
+  display:flex;
+  font-size:28rpx;
+  align-items: center;
+}
+.input-left{
+margin-left:30rpx;
+width:82%;
+height:100%;
+background:#EAEAEA;
+border-radius:12rpx;
+margin-right:20rpx;
+display:flex;
+align-items: center;
+position:relative;
+}
+.input-right{
+  color:#B2B2B2;
+}
+.search-text{
+  font-size:24rpx;
+  padding-left:40rpx;
+  width: 100%
+}
+.icon-search{
+  width:24rpx;
+  height:24rpx;
+  
+}
+.icon-search image{
+  position: absolute;
+  top:0;
+  bottom:0;
+  margin:auto;
+  width:24rpx;
+  height:24rpx;
+  left: 30rpx;
+}
+.search-result{
+  margin-top:40rpx;
+  height:calc(100% - 100rpx);
+
+}
+.result-title{
+  margin-left:30rpx;
+  font-size:28rpx;
+  color:#CCCCCC
+}
+.result-item{
+  color:#333;
+  font-size:32rpx;
+  margin-left:30rpx;
+  height:88rpx;
+  line-height:88rpx;
+  border-bottom:1px solid #E6E6E6;
+}

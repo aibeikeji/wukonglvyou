@@ -1,0 +1,34 @@
+<!--userInfo.wxml-->
+<view class="container">
+
+    <view class="head-tab dis-flex bor-t-b">
+        <view class="head-tab-item bor-tap flex" id="today" bindtap="selectType"><text class="{{listType == 'today' ? 'active' : ''}}">今日活动</text></view>
+        <view class="head-tab-item bor-tap flex" id="history" bindtap="selectType"><text class="{{listType == 'history' ? 'active' : ''}}">历史活动</text></view>
+    </view>
+
+    <scroll-view class="w-100 flex" style="margin-top: 1rpx;" scroll-y="true">
+        <view class="bor-t-b mod-col-list mt-20 w-100" style=" overflow: hidden;" wx:if="{{jList.length > 0}}">
+            <view class="mod-col-item bor-tap" wx:for="{{jList}}" bindtap="activityDetails" data-aid="{{item.id}}">
+                <view class="flex pr-20 dis-flex-c activity-cont">
+                    <view class="flex">
+                        <view class="fz-28">{{item.title}}</view>
+                        <view class="fz-22 c-gray pt-5">{{item.beginDate}}-{{item.endDate}} ({{item.days}}天)</view>
+                    </view>
+                    <view class="dis-flex">
+                        <view class="c-light-gray fz-26" wx:if="{{item.status == 10}}">已失败</view>
+                        <view class="in-activity fz-26" wx:if="{{item.status == 20}}">参加中</view>
+                        <view class="c-orange fz-26" wx:if="{{item.status == 30}}">已成功</view>
+                        <view class="c-gray fz-26" wx:if="{{item.status == 40}}">未参加</view>
+
+                        <view class="flex text-right c-light-gray fz-22">{{item.totalNumber}} 人参加</view>
+                    </view>
+                </view>
+                <image class="ac-list-pic mr-30" src="{{item.cover}}_260x200"></image>
+            </view>
+        </view>
+        <view class="text-center" style="padding-top: 25%" wx:if="{{jList.length == 0}}">
+            <image style="width: 334rpx; height: 278rpx;" src="{{assetsPath}}wx-applet/trip_empty.png"></image>
+            <view style="padding-top: 50rpx;" class="fz-28">暂无活动</view>
+        </view>
+    </scroll-view>
+</view>

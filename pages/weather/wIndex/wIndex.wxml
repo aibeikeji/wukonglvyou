@@ -1,0 +1,88 @@
+<!--userInfo.wxml-->
+<view class="container">
+
+    <view class="search-bar bor-bot">
+        <view class="searchbar bor-tap" bindtap="selectScenic">
+            <view class="search-input flex text-center">
+                <view class="icon icon-search" style="display: inline-block; vertical-align: middle; padding-right: 10rpx;"><image src="{{assetsPath}}wx-applet/weather/search_icon.png"></image></view>
+                <view class="flex fz-28 c-gray search-text" style="display: inline-block; vertical-align: middle; "> 切换/搜索景区...</view>
+                <!--<input type="text" confirm-type="search" id="search" placeholder="切换/搜索景区..." />-->
+            </view>
+        </view>
+    </view>
+
+    <view style="position: relative;" class="flex w-100">
+        <scroll-view scroll-y class="" style="position: absolute; width: 100%; top: 0; bottom: 0; left: 0;">
+
+            <view class="text-center" style="padding-top: 30%" wx:if="{{scenic.sensorList.length == 0}}">
+                <image src="{{assetsPath}}wx-applet/no_spots_icon.png" style="width: 272rpx; height: 232rpx;"></image>
+                <view class="c-gray fz-28 ptp-30">暂无数据</view>
+            </view>
+
+            <view class="weather-block" wx:for="{{scenic.sensorList}}">
+
+                <image class="weather-bg" wx:if="{{scenic.isDaytime && item.rainLevel == 'no'}}" src="{{assetsPath}}wx-applet/weather/day_no_rain.png" />
+                <image class="weather-bg" wx:if="{{scenic.isDaytime && item.rainLevel == 'small'}}" src="{{assetsPath}}wx-applet/weather/day_small_rain.png" />
+                <image class="weather-bg" wx:if="{{scenic.isDaytime && item.rainLevel == 'rainy'}}" src="{{assetsPath}}wx-applet/weather/day_rainy_rain.png" />
+                <image class="weather-bg" wx:if="{{scenic.isDaytime && item.rainLevel == 'heavy'}}" src="{{assetsPath}}wx-applet/weather/day_heavy_rain.png" />
+
+                <image class="weather-bg" wx:if="{{!scenic.isDaytime && item.rainLevel == 'no'}}" src="{{assetsPath}}wx-applet/weather/heavy_no_rain.png" />
+                <image class="weather-bg" wx:if="{{!scenic.isDaytime && item.rainLevel != 'no'}}" src="{{assetsPath}}wx-applet/weather/heavy_rain.png" />
+
+                <!--isDaytime("是否是白天，true 白天，false 黑夜")-->
+                <!--rainLevel("雨量级别，no:无雨，small:小雨，rainy:多雨，heavy:大雨")-->
+
+                <view class="inner-cont dis-flex-c">
+                    <view class="flex dis-c-center">
+                        <view>
+                            <text class="csd">{{item.temperature}}° <!--&#8451;--></text>
+                            <text>{{item.name}}</text>
+                        </view>
+                    </view>
+                    <view class="dis-flex flex">
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/rain_icon.png" />
+                            </view>
+                            <view class="flex dis-c-center">
+                                <view wx:if="{{item.rainLevel == 'no'}}">暂无降雨</view>
+                                <view wx:if="{{item.rainLevel == 'small'}}">小雨</view>
+                                <view wx:if="{{item.rainLevel == 'rainy'}}">中雨</view>
+                                <view wx:if="{{item.rainLevel == 'heavy'}}">大雨</view>
+                                <view class="sub-text">降雨量</view>
+                            </view>
+                        </view>
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/humidity_icon.png" /></view>
+                            <view class="flex dis-c-center">
+                                <view>{{item.humidity}}%</view>
+                                <view class="sub-text">湿度</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="dis-flex flex">
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/wind_icon.png" /></view>
+                            <view class="flex dis-c-center">
+                                <view>{{item.windSpeedMapping}}</view>
+                                <view class="sub-text">{{item.windDirectionMapping}}</view>
+                            </view>
+                        </view>
+                        <view class="flex dis-flex">
+                            <view class="weather-pic dis-flex dis-c-center">
+                                <image class="weather-ico" src="{{assetsPath}}wx-applet/weather/pressure_icon.png" /></view>
+                            <view class="flex dis-c-center">
+                                <view>{{item.pressure}} hPa</view>
+                                <view class="sub-text">实时气压</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+
+</view>

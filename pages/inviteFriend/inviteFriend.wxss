@@ -1,0 +1,41 @@
+.topImg{
+    height: 302rpx;
+    width: 100%;
+}
+.myContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.black{
+    color:#000000;
+}
+.gray{
+    color:#888888;
+}
+.text1{
+    margin-top: 50rpx;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.text2{
+    margin-top: 15rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+.text3{
+    margin-top: 153rpx;
+    font-size: 28rpx;
+
+    text-align: center;
+}
+.text4{
+    margin-top: 13rpx;
+    font-size: 34rpx;
+    text-align: center;
+}
+
+.share-button image { width: 42rpx; height: 42rpx; display: block; margin: 0 auto;}
+.share-button { position: absolute; bottom: 30rpx; width: 290rpx; left: 50%; margin-left: -145rpx; background-color: transparent; font-size: 28rpx;}

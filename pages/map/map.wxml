@@ -1,0 +1,9 @@
+<view style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column;">
+    <view style=" z-index: 1000; height: 200rpx; background-color: #f00;">cxvxcvxcv</view>
+    <view style=" flex: 1; position: relative;">
+        <view style=" position: absolute; top:-200rpx; bottom: 0; width: 100%; height: 100%;">
+            <map id="map2" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 100%;"></map>
+        </view>
+    </view>
+
+</view>

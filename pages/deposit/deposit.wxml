@@ -1,0 +1,9 @@
+<!--pages/deposit/deposit.wxml-->
+<view class="content">
+    <view class="shouldPay">应该支付的押金{{depositePay}}元</view>
+    <view class="payAlter">押金充值后，可随时退还</view>
+    <view class="wexinImg"><image src="../../images/icon_wechatpay.png"></image></view>
+    <view class="pay-btn">
+        <button bindtap="rechargeDeposit">去支付</button>
+    </view>
+</view>

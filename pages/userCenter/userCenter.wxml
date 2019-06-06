@@ -1,0 +1,107 @@
+<!--userCenter.wxml-->
+<view>
+    <view class="w-100">
+        <view class="userPicture">
+          <navigator url="/pages/userInfo/userInfo" hover-class="list-navigator-hover">
+              <view class="userMessage">
+                <view class="userPic">
+                  <image wx:if="{{userData.headImgPath.length==0}}" src="{{assetsPath}}wx-applet/user-default.png"></image>
+                  <image wx:else src="{{userData.headImgPath}}"></image>
+                </view>
+                <view class="userRight">
+                  <view>
+                      <text class="user-name">{{userData.nickname}}</text>
+                  </view>
+                  <view class="next-btn padBottom"><image src="{{assetsPath}}wx-applet/next-btn.png"></image></view>
+                </view>
+              </view>
+          </navigator>
+        </view>
+
+        <view class="usercenter-item">
+          <view class="items">
+            <navigator url="/pages/myJourney/myJourney" hover-class="list-navigator-hover">
+                <view class="items-pic"><image src="{{assetsPath}}wx-applet/user-order.png"></image></view>
+               <text>订单</text>
+            </navigator>  
+          </view>
+          <view class="items">
+          <navigator url="/pages/myWallet/myWallet" hover-class="list-navigator-hover">
+               <view class="items-pic"><image src="{{assetsPath}}wx-applet/user-wallet.png"></image></view>
+               <text>钱包</text>
+            </navigator>  
+          </view>
+          <view class="items">
+            <navigator url="/pages/myCoupon/myCoupon" hover-class="list-navigator-hover">
+               <view class="items-pic"><image src="{{assetsPath}}wx-applet/user-preferential.png"></image></view>
+               <text>优惠</text>
+            </navigator>  
+          </view>
+          <view class="items">
+            <navigator url="/pages/feedback/feedback" hover-class="list-navigator-hover">
+               <view class="items-pic"><image src="{{assetsPath}}wx-applet/user-service.png"></image></view>
+               <text>问题反馈</text>
+            </navigator>
+          </view>
+        </view>
+
+         <view class="user-list">
+          <view class="list-items">
+            <navigator url="/pages/msgList/msgList" hover-class="list-navigator-hover">
+                <view class="items-item">
+                    <view class="items-left">
+                      <view class="items_icon"><image src="{{assetsPath}}wx-applet/user-message.png"></image></view>
+                      <text>消息中心</text>
+                    </view>
+                    <view class="next-btn">
+                      <image src="{{assetsPath}}wx-applet/next-btn.png"></image>
+                    </view>
+                </view>
+            </navigator>
+          </view>
+
+          <view class="list-items">
+            <navigator bindtap="invitationAction">
+                <view class="items-item">
+                    <view class="items-left">
+                      <view class="items_icon"><image src="{{assetsPath}}wx-applet/user-invitation.png"></image></view>
+                      <text>邀请有奖</text>
+                    </view>
+                    <view class="next-btn">
+                      <image src="{{assetsPath}}wx-applet/next-btn.png"></image>
+                    </view>
+                </view>
+            </navigator>
+          </view>
+
+          <view class="list-items">
+            <navigator url="/pages/setting/setting?type=1" hover-class="list-navigator-hover">
+                <view class="items-item">
+                    <view class="items-left">
+                      <view class="items_icon"><image src="{{assetsPath}}wx-applet/user-guild.png"></image></view>
+                      <text>用户指南</text>
+                    </view>
+                    <view class="next-btn">
+                      <image src="{{assetsPath}}wx-applet/next-btn.png"></image>
+                    </view>
+                </view>
+            </navigator>
+          </view>
+
+          <view class="list-items">
+            <navigator url="/pages/setting/setting?type=2" hover-class="list-navigator-hover">
+                <view class="items-item">
+                    <view class="items-left">
+                      <view class="items_icon"><image src="{{assetsPath}}wx-applet/user-setting.png"></image></view>
+                      <text>设置</text>
+                    </view>
+                    <view class="next-btn">
+                      <image src="{{assetsPath}}wx-applet/next-btn.png"></image>
+                    </view>
+                </view>
+            </navigator>
+          </view>
+
+         </view>
+   </view>
+</view>
